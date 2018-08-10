@@ -2,9 +2,11 @@ pipeline {
     agent any
     stages {
         stage('Build') {
-            dir('./Project2') {
-                sh 'mvn clean'
-                sh 'mvn install'
+            steps {
+                dir('./Project2') {
+                    sh 'mvn clean'
+                    sh 'mvn install'
+                }
             }
         }
         stage('Deliver') {
