@@ -20,15 +20,16 @@ public class MasterServlet extends HttpServlet{
 		/* As you can see, any type of object can be written as a JSON 
 		 * Jackson specifically requires that objects to be transformed
 		 * have getters for private variables */
-//		response.getWriter().write(
-//				new ObjectMapper().writeValueAsString(RequestHelper.process(request, response)));
-		response.getWriter().write("hello from java");
+		response.getWriter().write(
+				new ObjectMapper().writeValueAsString(RequestHelper.process(request, response)));
+		
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/json");
-		
+		response.getWriter().write("hello from java");
+
 		response.getWriter().write(
 				new ObjectMapper().writeValueAsString(RequestHelper.process(request, response)));
 	}

@@ -10,7 +10,7 @@ public class RequestHelper {
 		case "/ERS/html/listEmployee.do":
 			return null;
 		default:
-			return "404.jsp";
+			return "you have reached the servlet";
 		}
 	}
 }
