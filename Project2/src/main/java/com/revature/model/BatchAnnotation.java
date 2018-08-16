@@ -14,15 +14,12 @@ import javax.persistence.Table;
 
 
 @Entity 
-@Table(name="BatchAnnotation")
-@NamedQueries ({
-	@NamedQuery(name = "RetrieveAllBatch", query = "FROM BATCHANNOTATION")
-})
+@Table(name="TESTNEWBATCH")
 
 public class BatchAnnotation {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqname")
-	@SequenceGenerator(initialValue = 1, sequenceName = "seqname", allocationSize = 1, name = "seqname")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_Sequence")
+	@SequenceGenerator(initialValue = 1, sequenceName = "ID_SEQUENCE", allocationSize = 1, name = "id_Sequence")
 	
 	@Column(name="BATCH_ID", nullable = false, precision = 10)
 	private int batchid;
