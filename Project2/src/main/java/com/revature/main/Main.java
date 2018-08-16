@@ -8,10 +8,10 @@ import com.revature.util.HibernateUtil;
 
 public class Main {
 	public static void main(String[] args) throws SQLException {
-		
-		NewBatchDaoImpl nb = new NewBatchDaoImpl();
-		System.out.println(nb.findBatchById(1));
-		
-		HibernateUtil.closeSession();
+		System.out.println(System.getProperty("catalina.base"));
+//		NewBatchDaoImpl nb = new NewBatchDaoImpl();
+//		System.out.println(nb.findBatchById(1));
+//		
+//		HibernateUtil.closeSession();
 	}
 }
