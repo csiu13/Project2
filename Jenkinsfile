@@ -4,17 +4,17 @@ pipeline {
         stage('Build') {
             steps {
                 dir('./Project2') {
-                    sh 'mvn clean'
-                    sh 'mvn install'
+                    bat 'mvn clean'
+                    bat 'mvn install'
                 }
             }
         }
         stage('Deliver') {
             steps {
                 dir('./Project2') {
-                    sh 'echo $CATALINA_HOME'
-                    sh 'cp target/*.war $CATALINA_HOME/webapps/'
-                    sh 'cp -r target/Project2 $CATALINA_HOME/webapps/'
+                    bat 'echo %CATALINA_HOME%'
+                    bat 'robocopy target %CATALINA_HOME%/webapps *.war & EXIT /B 0'
+                    bat 'robocopy target/Project2 %CATALINA_HOME%/webapps/ /s & EXIT /B 0'
                 }
             }
         }
