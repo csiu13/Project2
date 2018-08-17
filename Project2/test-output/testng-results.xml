@@ -2,36 +2,36 @@
 <testng-results skipped="0" failed="2" ignored="0" total="7" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="22262" started-at="2018-08-17T18:40:25Z" finished-at="2018-08-17T18:40:47Z">
+  <suite name="Default suite" duration-ms="22003" started-at="2018-08-17T18:57:19Z" finished-at="2018-08-17T18:57:41Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="22262" started-at="2018-08-17T18:40:25Z" finished-at="2018-08-17T18:40:47Z">
-      <class name="com.revature.testng.tabBarTests">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.revature.testng.tabBarTests@68999068]" name="beforeTest" is-config="true" duration-ms="11428" started-at="2018-08-17T18:40:25Z" finished-at="2018-08-17T18:40:36Z">
+    <test name="Default test" duration-ms="22003" started-at="2018-08-17T18:57:19Z" finished-at="2018-08-17T18:57:41Z">
+      <class name="com.revature.testng.TabBarTests">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.revature.testng.TabBarTests@647e447]" name="beforeTest" is-config="true" duration-ms="11541" started-at="2018-08-17T18:57:19Z" finished-at="2018-08-17T18:57:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="testBatchesTab()[pri:0, instance:com.revature.testng.tabBarTests@68999068]" name="testBatchesTab" duration-ms="2352" started-at="2018-08-17T18:40:36Z" finished-at="2018-08-17T18:40:39Z">
+        <test-method status="PASS" signature="testBatchesTab()[pri:0, instance:com.revature.testng.TabBarTests@647e447]" name="testBatchesTab" duration-ms="2131" started-at="2018-08-17T18:57:30Z" finished-at="2018-08-17T18:57:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testBatchesTab -->
-        <test-method status="PASS" signature="testCurriculaTab()[pri:0, instance:com.revature.testng.tabBarTests@68999068]" name="testCurriculaTab" duration-ms="1107" started-at="2018-08-17T18:40:39Z" finished-at="2018-08-17T18:40:40Z">
+        <test-method status="PASS" signature="testCurriculaTab()[pri:0, instance:com.revature.testng.TabBarTests@647e447]" name="testCurriculaTab" duration-ms="708" started-at="2018-08-17T18:57:32Z" finished-at="2018-08-17T18:57:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCurriculaTab -->
-        <test-method status="PASS" signature="testLocationsTab()[pri:0, instance:com.revature.testng.tabBarTests@68999068]" name="testLocationsTab" duration-ms="185" started-at="2018-08-17T18:40:40Z" finished-at="2018-08-17T18:40:40Z">
+        <test-method status="PASS" signature="testLocationsTab()[pri:0, instance:com.revature.testng.TabBarTests@647e447]" name="testLocationsTab" duration-ms="148" started-at="2018-08-17T18:57:33Z" finished-at="2018-08-17T18:57:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLocationsTab -->
-        <test-method status="PASS" signature="testOverviewTab()[pri:0, instance:com.revature.testng.tabBarTests@68999068]" name="testOverviewTab" duration-ms="2557" started-at="2018-08-17T18:40:40Z" finished-at="2018-08-17T18:40:43Z">
+        <test-method status="PASS" signature="testOverviewTab()[pri:0, instance:com.revature.testng.TabBarTests@647e447]" name="testOverviewTab" duration-ms="2379" started-at="2018-08-17T18:57:33Z" finished-at="2018-08-17T18:57:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testOverviewTab -->
-        <test-method status="FAIL" signature="testReportsTab()[pri:0, instance:com.revature.testng.tabBarTests@68999068]" name="testReportsTab" duration-ms="282" started-at="2018-08-17T18:40:43Z" finished-at="2018-08-17T18:40:43Z">
+        <test-method status="FAIL" signature="testReportsTab()[pri:0, instance:com.revature.testng.TabBarTests@647e447]" name="testReportsTab" duration-ms="440" started-at="2018-08-17T18:57:36Z" finished-at="2018-08-17T18:57:36Z">
           <exception class="java.lang.AssertionError">
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError
-at com.revature.testng.tabBarTests.testReportsTab(tabBarTests.java:107)
+at com.revature.testng.TabBarTests.testReportsTab(TabBarTests.java:81)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -63,11 +63,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testReportsTab -->
-        <test-method status="FAIL" signature="testSettingsTab()[pri:0, instance:com.revature.testng.tabBarTests@68999068]" name="testSettingsTab" duration-ms="3351" started-at="2018-08-17T18:40:43Z" finished-at="2018-08-17T18:40:46Z">
+        <test-method status="FAIL" signature="testSettingsTab()[pri:0, instance:com.revature.testng.TabBarTests@647e447]" name="testSettingsTab" duration-ms="3510" started-at="2018-08-17T18:57:36Z" finished-at="2018-08-17T18:57:39Z">
           <exception class="java.lang.AssertionError">
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError
-at com.revature.testng.tabBarTests.testSettingsTab(tabBarTests.java:126)
+at com.revature.testng.TabBarTests.testSettingsTab(TabBarTests.java:100)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -99,15 +99,15 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSettingsTab -->
-        <test-method status="PASS" signature="testTrainersTab()[pri:0, instance:com.revature.testng.tabBarTests@68999068]" name="testTrainersTab" duration-ms="160" started-at="2018-08-17T18:40:46Z" finished-at="2018-08-17T18:40:46Z">
+        <test-method status="PASS" signature="testTrainersTab()[pri:0, instance:com.revature.testng.TabBarTests@647e447]" name="testTrainersTab" duration-ms="313" started-at="2018-08-17T18:57:39Z" finished-at="2018-08-17T18:57:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTrainersTab -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.revature.testng.tabBarTests@68999068]" name="afterTest" is-config="true" duration-ms="778" started-at="2018-08-17T18:40:46Z" finished-at="2018-08-17T18:40:47Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.revature.testng.TabBarTests@647e447]" name="afterTest" is-config="true" duration-ms="792" started-at="2018-08-17T18:57:40Z" finished-at="2018-08-17T18:57:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- com.revature.testng.tabBarTests -->
+      </class> <!-- com.revature.testng.TabBarTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

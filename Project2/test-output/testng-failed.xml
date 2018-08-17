@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.revature.testng.tabBarTests">
+      <class name="com.revature.testng.TabBarTests">
         <methods>
           <include name="afterTest"/>
-          <include name="testReportsTab"/>
           <include name="testSettingsTab"/>
           <include name="beforeTest"/>
+          <include name="testReportsTab"/>
         </methods>
-      </class> <!-- com.revature.testng.tabBarTests -->
+      </class> <!-- com.revature.testng.TabBarTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
