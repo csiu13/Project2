@@ -17,10 +17,12 @@ public class Assignforce_Testing_KW {
 		File chrome = new File("src/test/resources/chromedriver.exe");
 		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
 		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("https://assignforce-client.cfapps.io/login");
 	}
 
+	
+	
 	@Test
 	public void testDriver() {
 		launchApplication();
