@@ -8,6 +8,7 @@ import { Config, ConfigService } from './config.service';
   providers: [ ConfigService ],
   styles: ['.error {color: red;}']
 })
+
 export class ConfigComponent {
   error: any;
   headers: string[];

@@ -15,9 +15,6 @@ import javax.persistence.Table;
 
 @Entity 
 @Table(name="BatchAnnotation")
-@NamedQueries ({
-	@NamedQuery(name = "RetrieveAllBatch", query = "FROM BATCHANNOTATION")
-})
 
 public class BatchAnnotation {
 	@Id
