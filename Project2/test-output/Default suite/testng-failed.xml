@@ -5,7 +5,7 @@
     <classes>
       <class name="com.revature.testng.Assignforce_Testing_KW">
         <methods>
-          <include name="testDriver"/>
+          <include name="adminCreateNewBatch"/>
         </methods>
       </class> <!-- com.revature.testng.Assignforce_Testing_KW -->
     </classes>
