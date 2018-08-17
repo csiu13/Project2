@@ -15,13 +15,13 @@ public class MasterServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		/* Sets content to be written in PrintWriter as JSON */
-		response.setContentType("text/json");
+		
 		
 		if(request.getParameter("test") != null) {
 			Runtime.getRuntime().exec("cmd C:\\Users\\Administrator\\Documents\\git_repo\\Project2\\Project2\\src\\test\\java \"\" test.bat");
-			response.getWriter().write(
-				new ObjectMapper().writeValueAsString("HELLOWORLD"));
+			response.getRequestDispatcher("../../test-output/index.html").forward(request, response);
 		} else {
+			response.setContentType("text/json");
 			response.getWriter().write(
 				new ObjectMapper().writeValueAsString(RequestHelper.process(request, response)));
 		}
