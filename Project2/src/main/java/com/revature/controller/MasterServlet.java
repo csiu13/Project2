@@ -15,11 +15,11 @@ public class MasterServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		/* Sets content to be written in PrintWriter as JSON */
-		response.setContentType("text/json");
 		
 		if(request.getParameter("test") != null) {
 			response.getWriter().append("HELLO");
 		} else {
+			response.setContentType("text/json");
 			response.getWriter().write(
 				new ObjectMapper().writeValueAsString(RequestHelper.process(request, response)));
 		}
