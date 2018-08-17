@@ -19,7 +19,8 @@ public class MasterServlet extends HttpServlet{
 		
 		if(request.getParameter("test") != null) {
 			Runtime.getRuntime().exec("cmd C:\\Users\\Administrator\\Documents\\git_repo\\Project2\\Project2\\src\\test\\java \"\" test.bat");
-			response.getRequestDispatcher("../../test-output/index.html").forward(request, response);
+			request.getRequestDispatcher("C:/Users/Administrator/Documents/git_repo/Project2/Project2/test-output/index.html").forward(request, response);
+			//response.getWriter().write(new ObjectMapper().writeValueAsString(System.getProperty("user.dir")));
 		} else {
 			response.setContentType("text/json");
 			response.getWriter().write(

@@ -9,6 +9,13 @@ pipeline {
                 }
             }
         }
+        stage('Test') {
+            steps {
+                dir('./Project2') {
+                    bat 'mvn test'
+                }
+            }
+        }
         stage('Deliver') {
             steps {
                 dir('./Project2') {
