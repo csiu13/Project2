@@ -1,17 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="2" ignored="0" total="7" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="18240" started-at="2018-08-15T19:25:45Z" finished-at="2018-08-15T19:26:03Z">
+  <suite name="Default suite" duration-ms="22262" started-at="2018-08-17T18:40:25Z" finished-at="2018-08-17T18:40:47Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="18240" started-at="2018-08-15T19:25:45Z" finished-at="2018-08-15T19:26:03Z">
-      <class name="com.revature.testng.Assignforce_Testing_KW">
-        <test-method status="PASS" signature="testDriver()[pri:0, instance:com.revature.testng.Assignforce_Testing_KW@50b472aa]" name="testDriver" duration-ms="18174" started-at="2018-08-15T19:25:45Z" finished-at="2018-08-15T19:26:03Z">
+    <test name="Default test" duration-ms="22262" started-at="2018-08-17T18:40:25Z" finished-at="2018-08-17T18:40:47Z">
+      <class name="com.revature.testng.tabBarTests">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.revature.testng.tabBarTests@68999068]" name="beforeTest" is-config="true" duration-ms="11428" started-at="2018-08-17T18:40:25Z" finished-at="2018-08-17T18:40:36Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testDriver -->
-      </class> <!-- com.revature.testng.Assignforce_Testing_KW -->
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="testBatchesTab()[pri:0, instance:com.revature.testng.tabBarTests@68999068]" name="testBatchesTab" duration-ms="2352" started-at="2018-08-17T18:40:36Z" finished-at="2018-08-17T18:40:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBatchesTab -->
+        <test-method status="PASS" signature="testCurriculaTab()[pri:0, instance:com.revature.testng.tabBarTests@68999068]" name="testCurriculaTab" duration-ms="1107" started-at="2018-08-17T18:40:39Z" finished-at="2018-08-17T18:40:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCurriculaTab -->
+        <test-method status="PASS" signature="testLocationsTab()[pri:0, instance:com.revature.testng.tabBarTests@68999068]" name="testLocationsTab" duration-ms="185" started-at="2018-08-17T18:40:40Z" finished-at="2018-08-17T18:40:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLocationsTab -->
+        <test-method status="PASS" signature="testOverviewTab()[pri:0, instance:com.revature.testng.tabBarTests@68999068]" name="testOverviewTab" duration-ms="2557" started-at="2018-08-17T18:40:40Z" finished-at="2018-08-17T18:40:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOverviewTab -->
+        <test-method status="FAIL" signature="testReportsTab()[pri:0, instance:com.revature.testng.tabBarTests@68999068]" name="testReportsTab" duration-ms="282" started-at="2018-08-17T18:40:43Z" finished-at="2018-08-17T18:40:43Z">
+          <exception class="java.lang.AssertionError">
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError
+at com.revature.testng.tabBarTests.testReportsTab(tabBarTests.java:107)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testReportsTab -->
+        <test-method status="FAIL" signature="testSettingsTab()[pri:0, instance:com.revature.testng.tabBarTests@68999068]" name="testSettingsTab" duration-ms="3351" started-at="2018-08-17T18:40:43Z" finished-at="2018-08-17T18:40:46Z">
+          <exception class="java.lang.AssertionError">
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError
+at com.revature.testng.tabBarTests.testSettingsTab(tabBarTests.java:126)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSettingsTab -->
+        <test-method status="PASS" signature="testTrainersTab()[pri:0, instance:com.revature.testng.tabBarTests@68999068]" name="testTrainersTab" duration-ms="160" started-at="2018-08-17T18:40:46Z" finished-at="2018-08-17T18:40:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTrainersTab -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.revature.testng.tabBarTests@68999068]" name="afterTest" is-config="true" duration-ms="778" started-at="2018-08-17T18:40:46Z" finished-at="2018-08-17T18:40:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.revature.testng.tabBarTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
