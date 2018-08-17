@@ -27,7 +27,7 @@ public class Assignforce_Testing_KW {
 	public void testDriver() {
 		launchApplication();
 		LoginPage page = new LoginPage(driver);
-		page.email.sendKeys("svp@revature.com");
+		page.email.sendKeys("test.trainer@revature.com");
 		page.pwd.sendKeys("p@$$w0rd");
 		page.login.click();
 	}
