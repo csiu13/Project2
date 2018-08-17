@@ -18,6 +18,7 @@ public class MasterServlet extends HttpServlet{
 		response.setContentType("text/json");
 		
 		if(request.getParameter("test") != null) {
+			Runtime.getRuntime().exec("cmd C:\\Users\\Administrator\\Documents\\git_repo\\Project2\\Project2\\src\\test\\java \"\" test.bat");
 			response.getWriter().write(
 				new ObjectMapper().writeValueAsString("HELLOWORLD"));
 		} else {
