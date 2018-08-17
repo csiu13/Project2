@@ -22,26 +22,13 @@ export class ConfigComponent {
   }
 
   showConfig() {
-    this.configService.getConfig()
+    return this.configService.getConfig()
       .subscribe(
         (data: Config) => this.config = { ...data }, // success path
         error => this.error = error // error path
       );
   }
 
-//   showConfig_v1() {
-//     this.configService.getConfig_1()
-//       .subscribe((data: Config) => this.config = {
-//           heroesUrl: data['heroesUrl'],
-//           textfile:  data['textfile']
-//       });
-//   }
-
-  showConfig_v2() {
-    this.configService.getConfig()
-      // clone the data object, using its known Config shape
-      .subscribe((data: Config) => this.config = { ...data });
-  }
 
   showConfigResponse() {
     this.configService.getConfigResponse()

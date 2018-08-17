@@ -7,7 +7,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
 export interface Config {
-  heroesUrl: string;
+  heroesUrl: Object;
 }
 
 @Injectable()
@@ -21,22 +21,6 @@ export class ConfigService {
       .pipe(
         retry(3), // retry a failed request up to 3 times
         catchError(this.handleError) // then handle the error
-      );
-  }
-
-  getConfig_1() {
-    return this.http.get(this.configUrl);
-  }
-
-  getConfig_2() {
-    // now returns an Observable of Config
-    return this.http.get<Config>(this.configUrl);
-  }
-
-  getConfig_3() {
-    return this.http.get<Config>(this.configUrl)
-      .pipe(
-        catchError(this.handleError)
       );
   }
 
