@@ -28,7 +28,6 @@ public class MasterServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/json");
-		response.getWriter().write("hello from java");
 
 		response.getWriter().write(
 				new ObjectMapper().writeValueAsString(RequestHelper.process(request, response)));
