@@ -9,6 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
@@ -26,19 +28,34 @@ public class Assignforce_Testing_KW {
 	public static WebDriver driver = null;
 	public static BatchDaoImpl batch = new BatchDaoImpl();
 	public static LoginDaoImpl login = new LoginDaoImpl();
-
-	public static void launchApplication() {
+	
+	@BeforeTest
+	public static void launchApplicationAsAdmin() {
 		File chrome = new File("src/test/resources/chromedriver.exe");
 		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
 		driver = new ChromeDriver();
 //		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("https://assignforce-client.cfapps.io/login");
+		
+		// login as admin
+		LoginPage page = new LoginPage(driver);
+		wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.elementToBeClickable(page.login));
+		LoginAnnotation admin = new LoginAnnotation();
+		admin = login.findLoginById(1);
+		page.email.sendKeys(admin.getUsername());
+		page.pwd.sendKeys(admin.getPassword());
+		page.login.click();
+	}
+	
+	@AfterTest
+	public void logoutAndCloseDriver() {
+		driver.close();
 	}
 
 	@Test
 	@Ignore
 	public void testAdminLogin() {
-		launchApplication();
 
 		// wait until login button is clickable
 		LoginPage page = new LoginPage(driver);
@@ -57,7 +74,6 @@ public class Assignforce_Testing_KW {
 	@Test
 	@Ignore
 	public void testUserLogin() {
-		launchApplication();
 
 		LoginPage page = new LoginPage(driver);
 		wait = new WebDriverWait(driver, 30);
@@ -74,18 +90,6 @@ public class Assignforce_Testing_KW {
 	@Test
 	@Ignore
 	public void adminCreateNewBatch() {
-		launchApplication();
-
-		// login as admin
-		LoginPage page = new LoginPage(driver);
-		wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.elementToBeClickable(page.login));
-		LoginAnnotation admin = new LoginAnnotation();
-		admin = login.findLoginById(1);
-		page.email.sendKeys(admin.getUsername());
-		page.pwd.sendKeys(admin.getPassword());
-		page.login.click();
-
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -117,18 +121,6 @@ public class Assignforce_Testing_KW {
 	@Test
 	@Ignore
 	public void adminIterateThroughBatchCoreList() {
-		launchApplication();
-
-		// login as admin
-		LoginPage page = new LoginPage(driver);
-		wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.elementToBeClickable(page.login));
-		LoginAnnotation admin = new LoginAnnotation();
-		admin = login.findLoginById(1);
-		page.email.sendKeys(admin.getUsername());
-		page.pwd.sendKeys(admin.getPassword());
-		page.login.click();
-
 		// click on batch tab spam clicks
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -220,18 +212,6 @@ public class Assignforce_Testing_KW {
 	@Test
 	@Ignore
 	public void adminIterateThroughBatchCoreList2() {
-		launchApplication();
-
-		// login as admin
-		LoginPage page = new LoginPage(driver);
-		wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.elementToBeClickable(page.login));
-		LoginAnnotation admin = new LoginAnnotation();
-		admin = login.findLoginById(1);
-		page.email.sendKeys(admin.getUsername());
-		page.pwd.sendKeys(admin.getPassword());
-		page.login.click();
-
 		// click on batch tab spam clicks
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -322,18 +302,6 @@ public class Assignforce_Testing_KW {
 	
 	@Test
 	public void adminIterateThroughBatchCoreUntilMemoryFault() {
-		launchApplication();
-
-		// login as admin
-		LoginPage page = new LoginPage(driver);
-		wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.elementToBeClickable(page.login));
-		LoginAnnotation admin = new LoginAnnotation();
-		admin = login.findLoginById(1);
-		page.email.sendKeys(admin.getUsername());
-		page.pwd.sendKeys(admin.getPassword());
-		page.login.click();
-
 		// click on batch tab spam clicks
 		// CHECK THE TRAINERS TAB! ITS WHERE THE INFORMATION FROM TABBING IS STORED
 		BatchPage tab = new BatchPage(driver);
