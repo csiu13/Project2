@@ -40,7 +40,7 @@ pipeline {
                     sh 'cp -r target/Project2 $CATALINA_HOME/webapps/'
                 }
                 dir('./TestApp') {
-                    sh 'pm2 start ./server/index.js'
+                    sh 'pm2 start -f ./server/index.js'
                 }
             }
         }
