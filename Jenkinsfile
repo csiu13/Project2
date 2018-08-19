@@ -10,7 +10,7 @@ pipeline {
                     sh 'mvn clean'
                     sh 'mvn install -fn'
                     sh 'npm install -g protractor'
-                    sh 'npm install -g protractor-beautiful-report'
+                    sh 'npm install -g protractor-beautiful-reporter'
                 }
             }
         }
