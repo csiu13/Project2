@@ -13,13 +13,10 @@ public class MasterServlet extends HttpServlet{
 	private static final long serialVersionUID = 590444879370100299L;
 
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/* Sets content to be written in PrintWriter as JSON */
-		
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		if(request.getParameter("test") != null) {
-			Runtime.getRuntime().exec("cmd C:\\Users\\Administrator\\Documents\\git_repo\\Project2\\Project2\\src\\test\\java \"\" test.bat");
-			request.getRequestDispatcher("C:/Users/Administrator/Documents/git_repo/Project2/Project2/test-output/index.html").forward(request, response);
+			//Runtime.getRuntime().exec("cmd C:\\Users\\Administrator\\Documents\\git_repo\\Project2\\Project2\\src\\test\\java \"\" test.bat");
+			request.getRequestDispatcher("../surefire-reports/index.html").forward(request, response);
 			//response.getWriter().write(new ObjectMapper().writeValueAsString(System.getProperty("user.dir")));
 		} else {
 			response.setContentType("text/json");
