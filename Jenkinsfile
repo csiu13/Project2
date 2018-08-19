@@ -9,7 +9,8 @@ pipeline {
                 dir('./Project2') {
                     sh 'mvn clean'
                     sh 'mvn install -fn'
-                    sh 'npm install'
+                    sh 'npm install -g protractor'
+                    sh 'npm install -g protractor-beautiful-report'
                 }
             }
         }
