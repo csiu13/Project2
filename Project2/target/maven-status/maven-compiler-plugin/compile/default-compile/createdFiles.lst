@@ -1,0 +1,11 @@
+com\revature\controller\MasterServlet.class
+com\revature\dao\BatchDaoImpl.class
+com\revature\dao\LoginDao.class
+com\revature\dao\LoginDaoImpl.class
+com\revature\controller\RequestHelper.class
+com\revature\util\HibernateUtil.class
+com\revature\util\LogUtil.class
+com\revature\main\Main.class
+com\revature\dao\BatchDao.class
+com\revature\model\BatchAnnotation.class
+com\revature\model\LoginAnnotation.class

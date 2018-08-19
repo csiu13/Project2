@@ -5,8 +5,8 @@
     <classes>
       <class name="com.revature.testng.Assignforce_Testing_KW">
         <methods>
+          <include name="adminIterateThroughLocations"/>
           <include name="launchApplicationAsAdmin"/>
-          <include name="adminIterateThroughBatchCoreUntilMemoryFault"/>
           <include name="logoutAndCloseDriver"/>
         </methods>
       </class> <!-- com.revature.testng.Assignforce_Testing_KW -->
