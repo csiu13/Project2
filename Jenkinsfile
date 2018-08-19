@@ -9,6 +9,7 @@ pipeline {
                 dir('./Project2') {
                     sh 'mvn clean'
                     sh 'mvn install -fn'
+                    sh 'npm install'
                 }
             }
         }
@@ -18,7 +19,6 @@ pipeline {
                 //     sh 'mvn test'
                 // }
                 dir('./TestApp') {
-                    sh 'npm install -g webdriver-manager'
                     sh 'webdriver-manager update'
                     sh 'webdriver-manager start --detach'
                     sh 'protractor Test/conf.js'
