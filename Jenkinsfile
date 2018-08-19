@@ -4,8 +4,8 @@ pipeline {
         stage('Build') {
             steps {
                 dir('./Project2') {
-                    sh 'mvn clean'
-                    sh 'mvn install'
+                    bat 'mvn clean'
+                    bat 'mvn install'
                 }
             }
         }
