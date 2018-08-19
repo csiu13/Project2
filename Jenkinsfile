@@ -27,9 +27,9 @@ pipeline {
                     sh 'cp -r ../Project2/target/surefire-reports/index.html ./dist/TestApp/testResults.html'
                 }
                 dir('./Project2') {
-                    sh 'echo %CATALINA_HOME%'
-                    sh 'cp -r target/*.war %CATALINA_HOME%/webapps'
-                    sh 'cp -r target/Project2 %CATALINA_HOME%/webapps/'
+                    sh 'echo $CATALINA_HOME'
+                    sh 'cp -r target/*.war $CATALINA_HOME/webapps'
+                    sh 'cp -r target/Project2 $CATALINA_HOME/webapps/'
                 }
                 dir('./TestApp') {
                     sh 'pm2 start ./server/index.js'
