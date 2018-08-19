@@ -8,18 +8,18 @@ pipeline {
                 }
                 dir('./Project2') {
                     sh 'mvn clean'
-                    sh 'mvn install -fn'
+                    sh 'mvn install -DskipTests'
                     //sh 'npm install -g protractor'
                 }
             }
         }
         stage('Test') {
             steps {
-                // dir('./Project2') {
-                //     sh 'mvn test'
-                // }
+                dir('./Project2') {
+                    sh 'mvn test -fn'
+                }
                 dir('./TestApp') {
-                    sh 'npm install protractor-beautiful-reporter --save-dev'
+                    //sh 'npm install protractor-beautiful-reporter --save-dev'
                     sh 'webdriver-manager update'
                     sh 'webdriver-manager start --detach'
                     sh 'protractor Test/conf.js'
