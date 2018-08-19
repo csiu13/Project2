@@ -4,9 +4,14 @@
   <button (click)="clear(); showConfigResponse()">GetResponse</button>
   <button (click)="clear()">clear</button>
   <button (click)="clear(); makeError()">error</button>
+<<<<<<< HEAD
   <button (click)="runTests();">Run Tests</button>
   <span *ngIf="message">
     <p>Heroes API URL is "{{message}}"</p>
+=======
+  <span *ngIf="config">
+    <p>Heroes API URL is "{{config.heroesUrl }}"</p>
+>>>>>>> 67303383b3c00037198967b14946c38cd5a17437
     <div *ngIf="headers">
       Response headers:
       <ul>
