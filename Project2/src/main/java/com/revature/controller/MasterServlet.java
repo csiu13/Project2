@@ -16,8 +16,9 @@ public class MasterServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		if(request.getParameter("test") != null) {
 			//Runtime.getRuntime().exec("cmd C:\\Users\\Administrator\\Documents\\git_repo\\Project2\\Project2\\src\\test\\java \"\" test.bat");
-			response.getWriter().append(System.getProperty("user.dir"));
-			//request.getRequestDispatcher("../surefire-reports/index.html").forward(request, response);
+			
+			//response.setContentType("text/html");
+			request.getRequestDispatcher("../surefire-reports/index.1.html").forward(request, response);
 			//response.getWriter().write(new ObjectMapper().writeValueAsString(System.getProperty("user.dir")));
 		} else {
 			response.setContentType("text/json");
