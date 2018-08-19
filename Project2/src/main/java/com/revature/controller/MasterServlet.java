@@ -18,7 +18,7 @@ public class MasterServlet extends HttpServlet{
 			//Runtime.getRuntime().exec("cmd C:\\Users\\Administrator\\Documents\\git_repo\\Project2\\Project2\\src\\test\\java \"\" test.bat");
 			
 			//response.setContentType("text/html");
-			request.getRequestDispatcher("../surefire-reports/index.1.html").forward(request, response);
+			//request.getRequestDispatcher("/index.1.html").forward(request, response);
 			//response.getWriter().write(new ObjectMapper().writeValueAsString(System.getProperty("user.dir")));
 		} else {
 			response.setContentType("text/json");

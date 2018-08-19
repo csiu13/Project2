@@ -112,7 +112,7 @@
 					<artifactId>maven-surefire-report-plugin</artifactId>
 					<version>2.22.0</version>
 					<configuration>
-						<outputDirectory>C:/Users/Administrator/git_repo/Project2/TestApp/dist/TestApp</outputDirectory>
+						<outputDirectory>${basedir}/target/newsite</outputDirectory>
 					</configuration>
 				</plugin>
 				<plugin>
