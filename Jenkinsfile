@@ -28,7 +28,7 @@ pipeline {
                 }
                 dir('./Project2') {
                     sh 'echo %CATALINA_HOME%'
-                    sh 'cp -r target %CATALINA_HOME%/webapps *.war'
+                    sh 'cp -r target/*.war %CATALINA_HOME%/webapps'
                     sh 'cp -r target/Project2 %CATALINA_HOME%/webapps/'
                 }
                 dir('./TestApp') {
