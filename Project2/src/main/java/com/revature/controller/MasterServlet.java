@@ -11,6 +11,10 @@ import com.revature.controller.RequestHelper;
 
 public class MasterServlet extends HttpServlet{
 	private static final long serialVersionUID = 590444879370100299L;
+	
+	public static void main(String[]args) {
+		
+	}
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		

@@ -17,6 +17,12 @@ pipeline {
                 dir('./Project2') {
                     sh 'mvn test'
                 }
+                dir('./TestApp') {
+                    sh 'webdriver-manager update'
+                    sh 'webdriver-manager start --detach'
+                    sh 'protractor Test/conf.js'
+                    sh 'webdriver-manager shutdown'
+                }
             }
         }
         stage('Deliver') {

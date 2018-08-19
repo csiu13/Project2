@@ -7,11 +7,7 @@ import { Observable, throwError, config } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
 export interface Config {
-<<<<<<< HEAD
-  heroesUrl: string;
-=======
   heroesUrl: any;
->>>>>>> 67303383b3c00037198967b14946c38cd5a17437
 }
 
 @Injectable()

@@ -53,7 +53,6 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
-	@Ignore
 	public void testAdminLogin() {
 
 		// wait until login button is clickable
@@ -71,11 +70,9 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
-	@Ignore
 	public void testUserLogin() {
 
 		LoginPage page = new LoginPage(driver);
-<<<<<<< HEAD
 		wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.elementToBeClickable(page.login));
 
@@ -83,15 +80,12 @@ public class Assignforce_Testing_KW {
 		user = login.findLoginById(2);
 		page.email.sendKeys(user.getUsername());
 		page.pwd.sendKeys(user.getPassword());
-=======
-		page.email.sendKeys("test.trainer@revature.com");
-		page.pwd.sendKeys("p@$$w0rd");
->>>>>>> ff2da2643fa4c112c686ee79f24b8c28fca0ecba
 		page.login.click();
 		driver.close();
 	}
 
 	@Test
+	//@Ignore
 	public void adminCreateNewBatchAndCancel() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -155,6 +149,7 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
+	//@Ignore
 	public void adminCreateNewBatchAndCancel2() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -212,6 +207,7 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
+	//@Ignore
 	public void adminCreateNewBatchAndCancel3() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -269,6 +265,7 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
+	@Ignore
 	public void adminCreateNewBatchAndCancel4() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -326,6 +323,7 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
+	@Ignore
 	public void adminCreateNewBatchAndCancel5() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -383,6 +381,7 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
+	@Ignore
 	public void adminCreateNewBatchAndCancel6() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -440,6 +439,7 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
+	@Ignore
 	public void adminCreateNewBatchAndCancel7() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -497,6 +497,7 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
+	@Ignore
 	public void adminCreateNewBatchAndCancel8() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -554,6 +555,7 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
+	@Ignore
 	public void adminCreateNewBatchAndCancel9() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -611,6 +613,7 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
+	@Ignore
 	public void adminCreateNewBatchAndCancel0() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -668,6 +671,7 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
+	@Ignore
 	public void adminCreateNewBatchAndSubmit() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -725,6 +729,7 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
+	@Ignore
 	public void adminIterateThroughBatchCoreList() {
 		// click on batch tab spam clicks
 		BatchPage tab = new BatchPage(driver);
@@ -815,6 +820,7 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
+	@Ignore
 	public void adminIterateThroughSkillsList() {
 		// click on batch tab spam clicks
 		BatchPage tab = new BatchPage(driver);
@@ -905,6 +911,7 @@ public class Assignforce_Testing_KW {
 
 	// incomplete, need to assert that trainers dropdown is more than usual
 	@Test
+	@Ignore
 	public void adminIterateThroughBatchCoreUntilMemoryFault() {
 		// click on batch tab spam clicks
 		// CHECK THE TRAINERS TAB! ITS WHERE THE INFORMATION FROM TABBING IS STORED
@@ -925,6 +932,7 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
+	@Ignore
 	public void adminIterateThroughTrainers() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -958,6 +966,7 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
+	@Ignore
 	public void adminIterateThroughCotrainers() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -995,6 +1004,7 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
+	@Ignore
 	public void adminIterateThroughLocations() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -1016,6 +1026,7 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
+	@Ignore
 	public void adminIterateThroughBuildling() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
