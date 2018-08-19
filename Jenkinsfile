@@ -4,30 +4,30 @@ pipeline {
         stage('Build') {
             steps {
                 dir('./Project2') {
-                    bat 'mvn clean'
-                    bat 'mvn install'
+                    sh 'mvn clean'
+                    sh 'mvn install'
                 }
             }
         }
         stage('Test') {
             steps {
                 dir('./Project2') {
-                    bat 'mvn test'
+                    sh 'mvn test'
                 }
             }
         }
         stage('Deliver') {
             steps {
                 dir('./TestApp') {
-                    bat 'ng build'
-                    bat 'cat ./dist/TestApp/index.html | sed \'s|<base href=\"/\">|<base href=\"/TestApp/\">|g\' > ./dist/TestApp/index.html'
-                    bat 'npm start'
-                    bat 'robocopy ../target/surefire-reports/index.html ./dist/TestApp/testResults.html & EXIT /B 0'
+                    sh 'ng build'
+                    sh 'cat ./dist/TestApp/index.html | sed \'s|<base href=\"/\">|<base href=\"/TestApp/\">|g\' > ./dist/TestApp/index.html'
+                    sh 'npm start'
+                    sh 'cp -r ../target/surefire-reports/index.html ./dist/TestApp/testResults.html'
                 }
                 dir('./Project2') {
-                    bat 'echo %CATALINA_HOME%'
-                    bat 'robocopy target %CATALINA_HOME%/webapps *.war & EXIT /B 0'
-                    bat 'robocopy target/Project2 %CATALINA_HOME%/webapps/ /s & EXIT /B 0'
+                    sh 'echo %CATALINA_HOME%'
+                    sh 'cp -r target %CATALINA_HOME%/webapps *.war'
+                    sh 'cp -r target/Project2 %CATALINA_HOME%/webapps/'
                     
                 }
             }
