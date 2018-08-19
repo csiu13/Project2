@@ -9,8 +9,7 @@ pipeline {
                 dir('./Project2') {
                     sh 'mvn clean'
                     sh 'mvn install -fn'
-                    sh 'npm install -g protractor'
-                    sh 'npm install -g protractor-beautiful-reporter'
+                    //sh 'npm install -g protractor'
                 }
             }
         }
@@ -20,6 +19,7 @@ pipeline {
                 //     sh 'mvn test'
                 // }
                 dir('./TestApp') {
+                    sh 'npm install protractor-beautiful-reporter --save-dev'
                     sh 'webdriver-manager update'
                     sh 'webdriver-manager start --detach'
                     sh 'protractor Test/conf.js'
