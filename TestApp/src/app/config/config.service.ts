@@ -7,17 +7,25 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
 export interface Config {
-  heroesUrl: Object;
+  heroesUrl: string;
 }
 
 @Injectable()
 export class ConfigService {
-  configUrl = 'http://localhost:8181/Project2/hello.do';
+  configUrl = 'http://ec2-54-197-1-7.compute-1.amazonaws.com:8080/Project2/hello.do';
 
   constructor(private http: HttpClient) { }
 
   getConfig() {
-    return this.http.get<Config>(this.configUrl)
+    return this.http.get<string>(this.configUrl)
+      .pipe(
+        retry(3), // retry a failed request up to 3 times
+        catchError(this.handleError) // then handle the error
+      );
+  }
+
+  getTestResult(param: string) {
+    return this.http.get<string>(this.configUrl + param)
       .pipe(
         retry(3), // retry a failed request up to 3 times
         catchError(this.handleError) // then handle the error

@@ -15,13 +15,22 @@ public class MasterServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		/* Sets content to be written in PrintWriter as JSON */
-		response.setContentType("text/json");
 		
+		
+		if(request.getParameter("test") != null) {
+			Runtime.getRuntime().exec("cmd C:\\Users\\Administrator\\Documents\\git_repo\\Project2\\Project2\\src\\test\\java \"\" test.bat");
+			request.getRequestDispatcher("C:/Users/Administrator/Documents/git_repo/Project2/Project2/test-output/index.html").forward(request, response);
+			//response.getWriter().write(new ObjectMapper().writeValueAsString(System.getProperty("user.dir")));
+		} else {
+			response.setContentType("text/json");
+			response.getWriter().write(
+				new ObjectMapper().writeValueAsString(RequestHelper.process(request, response)));
+		}
+
 		/* As you can see, any type of object can be written as a JSON 
 		 * Jackson specifically requires that objects to be transformed
 		 * have getters for private variables */
-		response.getWriter().write(
-				new ObjectMapper().writeValueAsString(RequestHelper.process(request, response)));
+		
 		
 	}
 	

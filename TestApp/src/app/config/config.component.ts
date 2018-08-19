@@ -11,6 +11,8 @@ import { Config, ConfigService } from './config.service';
 export class ConfigComponent {
   error: any;
   headers: string[];
+  message: string;
+  body: string;
   config: Config;
 
   constructor(private configService: ConfigService) {}
@@ -21,10 +23,18 @@ export class ConfigComponent {
     this.headers = undefined;
   }
 
+  runTests() {
+    return this.configService.getTestResult('?test=true')
+      .subscribe(
+        (data: string) => {this.body = data; console.log(data);},
+        error => this.error = error
+      );
+  }
+
   showConfig() {
     return this.configService.getConfig()
       .subscribe(
-        (data: Config) => this.config = { ...data }, // success path
+        (data: string) => {this.message = data; console.log(data);}, // success path
         error => this.error = error // error path
       );
   }
