@@ -5,9 +5,16 @@
     <classes>
       <class name="com.revature.testng.Assignforce_Testing_KW">
         <methods>
-          <include name="adminIterateThroughLocations"/>
+          <include name="adminCreateNewBatchAndCancel3"/>
           <include name="launchApplicationAsAdmin"/>
+          <include name="adminCreateNewBatchAndCancel9"/>
           <include name="logoutAndCloseDriver"/>
+          <include name="adminCreateNewBatchAndCancel8"/>
+          <include name="adminCreateNewBatchAndCancel5"/>
+          <include name="adminCreateNewBatchAndSubmit"/>
+          <include name="adminCreateNewBatchAndCancel7"/>
+          <include name="adminCreateNewBatchAndCancel4"/>
+          <include name="adminCreateNewBatchAndCancel6"/>
         </methods>
       </class> <!-- com.revature.testng.Assignforce_Testing_KW -->
     </classes>

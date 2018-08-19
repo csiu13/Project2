@@ -129,9 +129,9 @@ public class BatchPage {
 	// Trainer options
 	@FindBy(xpath = "//*[@id=\"mat-select-5\"]")
 	public WebElement trainerDropdown;
-	@FindBy(css = "#mat-option-166")
+	@FindBy(css = "mat-option:first-of-type")
 	public WebElement trainer1;
-	@FindBy(css = "#mat-option-167")
+	@FindBy(css = "mat-option:last-of-type")
 	public WebElement trainer2;
 	@FindBy(css = "#mat-option-168")
 	public WebElement trainer3;
@@ -153,8 +153,12 @@ public class BatchPage {
 	// Calendar options
 	@FindBy(xpath = "//*[@id=\"cdk-accordion-child-3\"]/div/form/div[2]/mat-form-field[1]/div/div[1]/div[1]/mat-datepicker-toggle/button")
 	public WebElement calendar;
-	@FindBy(css = "#mat-datepicker-2 > div.mat-calendar-content > mat-month-view > table > tbody > tr:nth-child(3) > td.mat-calendar-body-cell.mat-calendar-body-active.ng-star-inserted > div")
+	@FindBy(css = "#mat-datepicker-2 > div.mat-calendar-content > mat-month-view > table > tbody > tr:nth-child(4) > td:nth-child(1)")
 	public WebElement today;
+	@FindBy(css = "#mat-datepicker-2 > div.mat-calendar-content > mat-month-view > table > tbody > tr:nth-child(4) > td:nth-child(2)")
+	public WebElement tomorrow;
+	@FindBy(css = "#mat-datepicker-2 > div.mat-calendar-content > mat-month-view > table > tbody > tr:nth-child(4) > td:nth-child(3)")
+	public WebElement death;
 
 	// Co-Trainer options
 	@FindBy(css = "#mat-select-6")

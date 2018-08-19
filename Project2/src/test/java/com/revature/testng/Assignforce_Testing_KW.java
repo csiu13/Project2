@@ -27,7 +27,7 @@ public class Assignforce_Testing_KW {
 	public static WebDriver driver = null;
 	public static BatchDaoImpl batch = new BatchDaoImpl();
 	public static LoginDaoImpl login = new LoginDaoImpl();
-	
+
 	@BeforeTest
 	public static void launchApplicationAsAdmin() {
 		File chrome = new File("src/test/resources/chromedriver.exe");
@@ -35,7 +35,7 @@ public class Assignforce_Testing_KW {
 		driver = new ChromeDriver();
 //		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("https://assignforce-client.cfapps.io/login");
-		
+
 		// login as admin
 		LoginPage page = new LoginPage(driver);
 		wait = new WebDriverWait(driver, 30);
@@ -46,7 +46,7 @@ public class Assignforce_Testing_KW {
 		page.pwd.sendKeys(admin.getPassword());
 		page.login.click();
 	}
-	
+
 	@AfterTest
 	public void logoutAndCloseDriver() {
 		driver.close();
@@ -87,8 +87,7 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
-	@Ignore
-	public void adminCreateNewBatch() {
+	public void adminCreateNewBatchAndCancel() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -107,15 +106,620 @@ public class Assignforce_Testing_KW {
 			tab.coreDropdownSalesforce.click();
 		} else if (newBatch.getCore().equals("Custom") == true) {
 			tab.coreDropdownCustom.click();
+		} else if (newBatch.getCore().equals("Testing") == true) {
+			tab.coreDropdownTesting.click();
 		}
 
 		tab.calendar.click();
-		wait.until(ExpectedConditions.elementToBeClickable(tab.today));
 		tab.today.click();
+
+		tab.trainerDropdown.click();
+		if (newBatch.getTrainer().equals("August")) {
+			tab.trainer1.click();
+		} else {
+			tab.trainer2.click();
+		}
+
+		tab.cotrainerDropdown.click();
+		tab.august.click();
+
+		tab.locationDropdown.click();
+		if (newBatch.getLocation().equals("Revature HQ")) {
+			tab.revature.click();
+		} else if (newBatch.getLocation().equals("Capital One")) {
+			tab.wv.click();
+		} else {
+			tab.revature.click();
+		}
+
+		tab.buildingDropdown.click();
+		if (newBatch.getBuilding().equals("11730 Plaza American Drive (HQ)")) {
+			tab.firstBuilding.click();
+		} else {
+			tab.lastBuilding.click();
+		}
+
+		tab.roomDropdown.click();
+		if (newBatch.getRoom() == 208) {
+			tab.firstRoom.click();
+		} else {
+			tab.lastRoom.click();
+		}
+
+		tab.cancelBatch.click();
 	}
 
 	@Test
-	@Ignore
+	public void adminCreateNewBatchAndCancel2() {
+		// click on batch tab and input data using hibernate
+		BatchPage tab = new BatchPage(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
+		tab.batchTab.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdown));
+		tab.coreDropdown.click();
+
+		BatchAnnotation newBatch = new BatchAnnotation();
+		newBatch = batch.findBatchById(2);
+
+		if (newBatch.getCore().equals("Java") == true) {
+			tab.coreDropdownJava.click();
+		} else  {
+			tab.coreDropdownNet.click();
+		}
+		
+		tab.calendar.click();
+		tab.today.click();
+
+		tab.trainerDropdown.click();
+		if (newBatch.getTrainer().equals("August")) {
+			tab.trainer1.click();
+		} else {
+			tab.trainer2.click();
+		}
+
+		tab.cotrainerDropdown.click();
+		tab.august.click();
+
+		tab.locationDropdown.click();
+		if (newBatch.getLocation().equals("Revature HQ")) {
+			tab.revature.click();
+		} else if (newBatch.getLocation().equals("Capital One")) {
+			tab.wv.click();
+		} else {
+			tab.revature.click();
+		}
+
+		tab.buildingDropdown.click();
+		if (newBatch.getBuilding().equals("11730 Plaza American Drive (HQ)")) {
+			tab.firstBuilding.click();
+		} else {
+			tab.lastBuilding.click();
+		}
+
+		tab.roomDropdown.click();
+		if (newBatch.getRoom() == 208) {
+			tab.firstRoom.click();
+		} else {
+			tab.lastRoom.click();
+		}
+
+		tab.cancelBatch.click();
+	}
+
+	@Test
+	public void adminCreateNewBatchAndCancel3() {
+		// click on batch tab and input data using hibernate
+		BatchPage tab = new BatchPage(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
+		tab.batchTab.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdown));
+		tab.coreDropdown.click();
+
+		BatchAnnotation newBatch = new BatchAnnotation();
+		newBatch = batch.findBatchById(3);
+
+		if (newBatch.getCore().equals("Java") == true) {
+			tab.coreDropdownJava.click();
+		} else  {
+			tab.coreDropdownNet.click();
+		}
+
+		tab.calendar.click();
+		tab.today.click();
+
+		tab.trainerDropdown.click();
+		if (newBatch.getTrainer().equals("August")) {
+			tab.trainer1.click();
+		} else {
+			tab.trainer2.click();
+		}
+
+		tab.cotrainerDropdown.click();
+		tab.august.click();
+
+		tab.locationDropdown.click();
+		if (newBatch.getLocation().equals("Revature HQ")) {
+			tab.revature.click();
+		} else if (newBatch.getLocation().equals("Capital One")) {
+			tab.wv.click();
+		} else {
+			tab.revature.click();
+		}
+
+		tab.buildingDropdown.click();
+		if (newBatch.getBuilding().equals("11730 Plaza American Drive (HQ)")) {
+			tab.firstBuilding.click();
+		} else {
+			tab.lastBuilding.click();
+		}
+
+		tab.roomDropdown.click();
+		if (newBatch.getRoom() == 208) {
+			tab.firstRoom.click();
+		} else {
+			tab.lastRoom.click();
+		}
+
+		tab.cancelBatch.click();
+	}
+
+	@Test
+	public void adminCreateNewBatchAndCancel4() {
+		// click on batch tab and input data using hibernate
+		BatchPage tab = new BatchPage(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
+		tab.batchTab.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdown));
+		tab.coreDropdown.click();
+
+		BatchAnnotation newBatch = new BatchAnnotation();
+		newBatch = batch.findBatchById(4);
+
+		if (newBatch.getCore().equals("Java") == true) {
+			tab.coreDropdownJava.click();
+		} else  {
+			tab.coreDropdownNet.click();
+		}
+
+		tab.calendar.click();
+		tab.today.click();
+
+		tab.trainerDropdown.click();
+		if (newBatch.getTrainer().equals("August")) {
+			tab.trainer1.click();
+		} else {
+			tab.trainer2.click();
+		}
+
+		tab.cotrainerDropdown.click();
+		tab.august.click();
+
+		tab.locationDropdown.click();
+		if (newBatch.getLocation().equals("Revature HQ")) {
+			tab.revature.click();
+		} else if (newBatch.getLocation().equals("Capital One")) {
+			tab.wv.click();
+		} else {
+			tab.revature.click();
+		}
+
+		tab.buildingDropdown.click();
+		if (newBatch.getBuilding().equals("11730 Plaza American Drive (HQ)")) {
+			tab.firstBuilding.click();
+		} else {
+			tab.lastBuilding.click();
+		}
+
+		tab.roomDropdown.click();
+		if (newBatch.getRoom() == 208) {
+			tab.firstRoom.click();
+		} else {
+			tab.lastRoom.click();
+		}
+
+		tab.cancelBatch.click();
+	}
+
+	@Test
+	public void adminCreateNewBatchAndCancel5() {
+		// click on batch tab and input data using hibernate
+		BatchPage tab = new BatchPage(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
+		tab.batchTab.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdown));
+		tab.coreDropdown.click();
+
+		BatchAnnotation newBatch = new BatchAnnotation();
+		newBatch = batch.findBatchById(5);
+
+		if (newBatch.getCore().equals("Java") == true) {
+			tab.coreDropdownJava.click();
+		} else  {
+			tab.coreDropdownNet.click();
+		}
+
+		tab.calendar.click();
+		tab.today.click();
+
+		tab.trainerDropdown.click();
+		if (newBatch.getTrainer().equals("August")) {
+			tab.trainer1.click();
+		} else {
+			tab.trainer2.click();
+		}
+
+		tab.cotrainerDropdown.click();
+		tab.august.click();
+
+		tab.locationDropdown.click();
+		if (newBatch.getLocation().equals("Revature HQ")) {
+			tab.revature.click();
+		} else if (newBatch.getLocation().equals("Capital One")) {
+			tab.wv.click();
+		} else {
+			tab.revature.click();
+		}
+
+		tab.buildingDropdown.click();
+		if (newBatch.getBuilding().equals("11730 Plaza American Drive (HQ)")) {
+			tab.firstBuilding.click();
+		} else {
+			tab.lastBuilding.click();
+		}
+
+		tab.roomDropdown.click();
+		if (newBatch.getRoom() == 208) {
+			tab.firstRoom.click();
+		} else {
+			tab.lastRoom.click();
+		}
+
+		tab.cancelBatch.click();
+	}
+
+	@Test
+	public void adminCreateNewBatchAndCancel6() {
+		// click on batch tab and input data using hibernate
+		BatchPage tab = new BatchPage(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
+		tab.batchTab.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdown));
+		tab.coreDropdown.click();
+
+		BatchAnnotation newBatch = new BatchAnnotation();
+		newBatch = batch.findBatchById(6);
+
+		if (newBatch.getCore().equals("Java") == true) {
+			tab.coreDropdownJava.click();
+		} else  {
+			tab.coreDropdownNet.click();
+		}
+
+		tab.calendar.click();
+		tab.today.click();
+
+		tab.trainerDropdown.click();
+		if (newBatch.getTrainer().equals("August")) {
+			tab.trainer1.click();
+		} else {
+			tab.trainer2.click();
+		}
+
+		tab.cotrainerDropdown.click();
+		tab.august.click();
+
+		tab.locationDropdown.click();
+		if (newBatch.getLocation().equals("Revature HQ")) {
+			tab.revature.click();
+		} else if (newBatch.getLocation().equals("Capital One")) {
+			tab.wv.click();
+		} else {
+			tab.revature.click();
+		}
+
+		tab.buildingDropdown.click();
+		if (newBatch.getBuilding().equals("11730 Plaza American Drive (HQ)")) {
+			tab.firstBuilding.click();
+		} else {
+			tab.lastBuilding.click();
+		}
+
+		tab.roomDropdown.click();
+		if (newBatch.getRoom() == 208) {
+			tab.firstRoom.click();
+		} else {
+			tab.lastRoom.click();
+		}
+
+		tab.cancelBatch.click();
+	}
+
+	@Test
+	public void adminCreateNewBatchAndCancel7() {
+		// click on batch tab and input data using hibernate
+		BatchPage tab = new BatchPage(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
+		tab.batchTab.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdown));
+		tab.coreDropdown.click();
+
+		BatchAnnotation newBatch = new BatchAnnotation();
+		newBatch = batch.findBatchById(7);
+
+		if (newBatch.getCore().equals("Java") == true) {
+			tab.coreDropdownJava.click();
+		} else  {
+			tab.coreDropdownNet.click();
+		}
+
+		tab.calendar.click();
+		tab.today.click();
+
+		tab.trainerDropdown.click();
+		if (newBatch.getTrainer().equals("August")) {
+			tab.trainer1.click();
+		} else {
+			tab.trainer2.click();
+		}
+
+		tab.cotrainerDropdown.click();
+		tab.august.click();
+
+		tab.locationDropdown.click();
+		if (newBatch.getLocation().equals("Revature HQ")) {
+			tab.revature.click();
+		} else if (newBatch.getLocation().equals("Capital One")) {
+			tab.wv.click();
+		} else {
+			tab.revature.click();
+		}
+
+		tab.buildingDropdown.click();
+		if (newBatch.getBuilding().equals("11730 Plaza American Drive (HQ)")) {
+			tab.firstBuilding.click();
+		} else {
+			tab.lastBuilding.click();
+		}
+
+		tab.roomDropdown.click();
+		if (newBatch.getRoom() == 208) {
+			tab.firstRoom.click();
+		} else {
+			tab.lastRoom.click();
+		}
+
+		tab.cancelBatch.click();
+	}
+
+	@Test
+	public void adminCreateNewBatchAndCancel8() {
+		// click on batch tab and input data using hibernate
+		BatchPage tab = new BatchPage(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
+		tab.batchTab.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdown));
+		tab.coreDropdown.click();
+
+		BatchAnnotation newBatch = new BatchAnnotation();
+		newBatch = batch.findBatchById(8);
+
+		if (newBatch.getCore().equals("Java") == true) {
+			tab.coreDropdownJava.click();
+		} else  {
+			tab.coreDropdownNet.click();
+		}
+
+		tab.calendar.click();
+		tab.today.click();
+
+		tab.trainerDropdown.click();
+		if (newBatch.getTrainer().equals("August")) {
+			tab.trainer1.click();
+		} else {
+			tab.trainer2.click();
+		}
+
+		tab.cotrainerDropdown.click();
+		tab.august.click();
+
+		tab.locationDropdown.click();
+		if (newBatch.getLocation().equals("Revature HQ")) {
+			tab.revature.click();
+		} else if (newBatch.getLocation().equals("Capital One")) {
+			tab.wv.click();
+		} else {
+			tab.revature.click();
+		}
+
+		tab.buildingDropdown.click();
+		if (newBatch.getBuilding().equals("11730 Plaza American Drive (HQ)")) {
+			tab.firstBuilding.click();
+		} else {
+			tab.lastBuilding.click();
+		}
+
+		tab.roomDropdown.click();
+		if (newBatch.getRoom() == 208) {
+			tab.firstRoom.click();
+		} else {
+			tab.lastRoom.click();
+		}
+
+		tab.cancelBatch.click();
+	}
+
+	@Test
+	public void adminCreateNewBatchAndCancel9() {
+		// click on batch tab and input data using hibernate
+		BatchPage tab = new BatchPage(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
+		tab.batchTab.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdown));
+		tab.coreDropdown.click();
+
+		BatchAnnotation newBatch = new BatchAnnotation();
+		newBatch = batch.findBatchById(9);
+
+		if (newBatch.getCore().equals("Java") == true) {
+			tab.coreDropdownJava.click();
+		} else  {
+			tab.coreDropdownNet.click();
+		}
+
+		tab.calendar.click();
+		tab.today.click();
+
+		tab.trainerDropdown.click();
+		if (newBatch.getTrainer().equals("August")) {
+			tab.trainer1.click();
+		} else {
+			tab.trainer2.click();
+		}
+
+		tab.cotrainerDropdown.click();
+		tab.august.click();
+
+		tab.locationDropdown.click();
+		if (newBatch.getLocation().equals("Revature HQ")) {
+			tab.revature.click();
+		} else if (newBatch.getLocation().equals("Capital One")) {
+			tab.wv.click();
+		} else {
+			tab.revature.click();
+		}
+
+		tab.buildingDropdown.click();
+		if (newBatch.getBuilding().equals("11730 Plaza American Drive (HQ)")) {
+			tab.firstBuilding.click();
+		} else {
+			tab.lastBuilding.click();
+		}
+
+		tab.roomDropdown.click();
+		if (newBatch.getRoom() == 208) {
+			tab.firstRoom.click();
+		} else {
+			tab.lastRoom.click();
+		}
+
+		tab.cancelBatch.click();
+	}
+
+	@Test
+	public void adminCreateNewBatchAndCancel0() {
+		// click on batch tab and input data using hibernate
+		BatchPage tab = new BatchPage(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
+		tab.batchTab.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdown));
+		tab.coreDropdown.click();
+
+		BatchAnnotation newBatch = new BatchAnnotation();
+		newBatch = batch.findBatchById(10);
+
+		if (newBatch.getCore().equals("Java") == true) {
+			tab.coreDropdownJava.click();
+		} else  {
+			tab.coreDropdownNet.click();
+		}
+
+		tab.calendar.click();
+		tab.today.click();
+
+		tab.trainerDropdown.click();
+		if (newBatch.getTrainer().equals("August")) {
+			tab.trainer1.click();
+		} else {
+			tab.trainer2.click();
+		}
+
+		tab.cotrainerDropdown.click();
+		tab.august.click();
+
+		tab.locationDropdown.click();
+		if (newBatch.getLocation().equals("Revature HQ")) {
+			tab.revature.click();
+		} else if (newBatch.getLocation().equals("Capital One")) {
+			tab.wv.click();
+		} else {
+			tab.revature.click();
+		}
+
+		tab.buildingDropdown.click();
+		if (newBatch.getBuilding().equals("11730 Plaza American Drive (HQ)")) {
+			tab.firstBuilding.click();
+		} else {
+			tab.lastBuilding.click();
+		}
+
+		tab.roomDropdown.click();
+		if (newBatch.getRoom() == 208) {
+			tab.firstRoom.click();
+		} else {
+			tab.lastRoom.click();
+		}
+
+		tab.cancelBatch.click();
+	}
+
+	@Test
+	public void adminCreateNewBatchAndSubmit() {
+		// click on batch tab and input data using hibernate
+		BatchPage tab = new BatchPage(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
+		tab.batchTab.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdown));
+		tab.coreDropdown.click();
+
+		BatchAnnotation newBatch = new BatchAnnotation();
+		newBatch = batch.findBatchById(1);
+
+		if (newBatch.getCore().equals("Java") == true) {
+			tab.coreDropdownJava.click();
+		} else  {
+			tab.coreDropdownNet.click();
+		}
+
+		tab.calendar.click();
+		tab.today.click();
+
+		tab.trainerDropdown.click();
+		if (newBatch.getTrainer().equals("August")) {
+			tab.trainer1.click();
+		} else {
+			tab.trainer2.click();
+		}
+
+		tab.cotrainerDropdown.click();
+		tab.august.click();
+
+		tab.locationDropdown.click();
+		if (newBatch.getLocation().equals("Revature HQ")) {
+			tab.revature.click();
+		} else if (newBatch.getLocation().equals("Capital One")) {
+			tab.wv.click();
+		} else {
+			tab.revature.click();
+		}
+
+		tab.buildingDropdown.click();
+		if (newBatch.getBuilding().equals("11730 Plaza American Drive (HQ)")) {
+			tab.firstBuilding.click();
+		} else {
+			tab.lastBuilding.click();
+		}
+
+		tab.roomDropdown.click();
+		if (newBatch.getRoom() == 208) {
+			tab.firstRoom.click();
+		} else {
+			tab.lastRoom.click();
+		}
+
+		tab.submitBatch.click();
+	}
+
+	@Test
 	public void adminIterateThroughBatchCoreList() {
 		// click on batch tab spam clicks
 		BatchPage tab = new BatchPage(driver);
@@ -204,9 +808,8 @@ public class Assignforce_Testing_KW {
 		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdownDfsfds));
 		tab.coreDropdownDfsfds.click();
 	}
-	
+
 	@Test
-	@Ignore
 	public void adminIterateThroughSkillsList() {
 		// click on batch tab spam clicks
 		BatchPage tab = new BatchPage(driver);
@@ -214,14 +817,13 @@ public class Assignforce_Testing_KW {
 		tab.batchTab.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tab.skillsDropdown));
 		tab.skillsDropdown.click();
-		
 
 		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdown));
 		tab.coreDropdown.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdownJava));
 		tab.coreDropdownJava.click();
-		
-		//click all options under skills
+
+		// click all options under skills
 		tab.skillsDropdown.click();
 		tab.skillsDropdownCorejava.click();
 		tab.skillsDropdownJunit.click();
@@ -293,12 +895,11 @@ public class Assignforce_Testing_KW {
 		tab.skillsDropdownCucumber.click();
 		tab.skillsDropdownC.click();
 		tab.skillsDropdownCorenet.click();
-		
+
 	}
 
-	//incomplete, need to assert that trainers dropdown is more than usual
+	// incomplete, need to assert that trainers dropdown is more than usual
 	@Test
-	@Ignore
 	public void adminIterateThroughBatchCoreUntilMemoryFault() {
 		// click on batch tab spam clicks
 		// CHECK THE TRAINERS TAB! ITS WHERE THE INFORMATION FROM TABBING IS STORED
@@ -317,9 +918,8 @@ public class Assignforce_Testing_KW {
 		}
 
 	}
-	
+
 	@Test
-	@Ignore
 	public void adminIterateThroughTrainers() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -351,9 +951,8 @@ public class Assignforce_Testing_KW {
 		tab.trainerDropdown.click();
 		tab.trainer10.click();
 	}
-	
+
 	@Test
-	@Ignore
 	public void adminIterateThroughCotrainers() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -391,7 +990,6 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
-	@Ignore
 	public void adminIterateThroughLocations() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -434,7 +1032,7 @@ public class Assignforce_Testing_KW {
 		tab.buildingDropdown.click();
 		tab.lastBuilding.click();
 	}
-	
+
 	@Test
 	public void adminIterateThroughRoom() {
 		BatchPage tab = new BatchPage(driver);
@@ -458,4 +1056,3 @@ public class Assignforce_Testing_KW {
 		tab.lastRoom.click();
 	}
 }
-
