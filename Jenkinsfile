@@ -4,8 +4,8 @@ pipeline {
         stage('Build') {
             steps {
                 dir('./TestApp') {
-                    sh 'pm2 stop 0'
-                    sh 'pm2 update'
+                    //sh 'pm2 stop 0'
+                    //sh 'pm2 update'
                 }
                 dir('./Project2') {
                     sh 'mvn clean'
@@ -42,7 +42,7 @@ pipeline {
                     sh 'cp -r target/Project2 $CATALINA_HOME/webapps/'
                 }
                 dir('./TestApp') {
-                    sh 'pm2 start -f ./server/index.js'
+                    sh 'pm2 start ./server/index.js'
                 }
             }
         }
