@@ -1,6 +1,7 @@
 package com.revature.testng;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,6 +22,13 @@ public class DriverAbstraction {
 	public static void loginSVP() {
 		launchApplication();
 		LoginPage page = new LoginPage(driver);
+		
+		  try {
+			  TimeUnit.SECONDS.sleep(5);
+		  } catch (InterruptedException e) {
+			  e.printStackTrace();
+		  }
+		
 		page.email.sendKeys("svp@revature.com");
 		page.pwd.sendKeys("p@$$w0rd");
 		page.login.click();
