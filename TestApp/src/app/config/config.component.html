@@ -10,30 +10,11 @@
     font-size: 20px;
   }
 </style>
-<div style="text-align: center">
   <!-- <button (click)="clear(); showConfig()">Get</button>
   <button (click)="clear(); showConfigResponse()">GetResponse</button>
   <button (click)="clear()">clear</button>
   <button (click)="clear(); makeError()">error</button> -->
-  <button><a href="seleniumReports.html">Run Selenium Tests</a></button>
-  <!--<button><a href="../TestResults/tmp/protractorReports.html">Run Protractor Tests</a></button>-->
-  <span *ngIf="message">
-    <p>Heroes API URL is "{{message}}"</p>
-    <div *ngIf="headers">
-      Response headers:
-      <ul>
-        <li *ngFor="let header of headers">{{header}}</li>
-      </ul>
-    </div>
-  </span>
-</div>
-<div style="text-align: center">
-  <!-- <button (click)="clear(); showConfig()">Get</button>
-  <button (click)="clear(); showConfigResponse()">GetResponse</button>
-  <button (click)="clear()">clear</button>
-  <button (click)="clear(); makeError()">error</button> -->
-  <button><a href="test-output/index.html">Run Selenium Tests</a></button>
-  <button><a href=""></a></button>
+  <button><a href="surefire-reports/index.html">Run Selenium Tests</a></button>
   <span *ngIf="message">
     <p>Heroes API URL is "{{message}}"</p>
     <div *ngIf="headers">
@@ -51,7 +32,7 @@
   <button (click)="clear()">clear</button>
   <button (click)="clear(); makeError()">error</button> -->
   <!--<button><a href="../TestResults/seleniumReports.html">Run Selenium Tests</a></button>-->
-  <button><a href=".html">Run Protractor Tests</a></button>
+  <button><a href="tmp/report.html">Run Protractor Tests</a></button>
   <span *ngIf="message">
     <p>Heroes API URL is "{{message}}"</p>
     <div *ngIf="headers">
