@@ -32,7 +32,7 @@ pipeline {
             steps {
                 dir('./TestApp') {
                     sh 'ng build'
-                    sh 'cat ./dist/TestApp/index.html | sed \'s|<base href=\"/\">|<base href=\"/TestApp/\">|g\' > ./dist/TestApp/index.html'
+                    //sh 'cat ./dist/TestApp/index.html | sed \'s|<base href=\"/\">|<base href=\"/TestApp/\">|g\' > ./dist/TestApp/index.html'
                     sh 'cp -r ../Project2/target/surefire-reports/index.html ./dist/TestApp/seleniumResults.html'
                     sh 'cp -r ./tmp/report.html ./dist/TestApp/protractorResults.html'
                 }
