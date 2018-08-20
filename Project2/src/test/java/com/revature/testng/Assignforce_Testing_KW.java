@@ -5,31 +5,28 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-<<<<<<< Updated upstream
-=======
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Ignore;
->>>>>>> Stashed changes
 import org.testng.annotations.Test;
 
+import com.revature.dao.BatchDaoImpl;
+import com.revature.dao.LoginDaoImpl;
+import com.revature.model.BatchAnnotation;
+import com.revature.pagefactory.BatchPage;
 import com.revature.pagefactory.LoginPage;
 
 public class Assignforce_Testing_KW {
 
 	public static WebDriver driver = null;
-<<<<<<< Updated upstream
-	
-	public static void launchApplication() {
-=======
+	public static WebDriverWait wait = null;
 	public static BatchDaoImpl batch = new BatchDaoImpl();
 	public static LoginDaoImpl login = new LoginDaoImpl();
 
 	@BeforeMethod
 	public static void launchApplicationAsAdmin() {
->>>>>>> Stashed changes
 		File chrome = new File("src/test/resources/chromedriver.exe");
 		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
 		driver = new ChromeDriver();
@@ -37,27 +34,20 @@ public class Assignforce_Testing_KW {
 		driver.get("https://assignforce-client.cfapps.io/login");
 	}
 
-<<<<<<< Updated upstream
-	
-=======
 	@AfterMethod
 	public void logoutAndCloseDriver() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.logout));
 		driver.close();
 	}
->>>>>>> Stashed changes
 	
 	@Test
 	public void testDriver() {
-		launchApplication();
+		launchApplicationAsAdmin();
 		LoginPage page = new LoginPage(driver);
 		page.email.sendKeys("svp@revature.com");
 		page.pwd.sendKeys("p@$$w0rd");
 		page.login.click();
-<<<<<<< Updated upstream
-	}
-=======
 		driver.close();
 	}
 
@@ -973,6 +963,4 @@ public class Assignforce_Testing_KW {
 		tab.editBatch4.click();
 		tab.editBatch5.click();
 	}
-
->>>>>>> Stashed changes
 }

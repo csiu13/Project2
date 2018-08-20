@@ -20,16 +20,13 @@
 		<!-- </groups> -->
 
 		<classes>
-			<class name="com.revature.testng.Assignforce_Testing_KW">
-<!-- 	<methods> -->
-<!-- 		<include name="adminIterateThroughRoom"></include> -->
-<!-- 	</methods> -->
-			</class>
-			<class name="com.revature.testng.Assignforce_Testing_KW_Users">
-			</class>
-			<class name="com.revature.cucumber.TestRunner">
-			</class>
+			<class name="com.revature.testng.Assignforce_Testing_KW" />
+			<class name="com.revature.testng.Assignforce_Testing_KW_Users" />
+			<class name="com.revature.testng.LoginTests" />
+			<class name="com.revature.testng.TabBarTests" />
+			<class name="com.revature.testng.OverviewTests" />
+			<class name="com.revature.cucumber.TestRunner" />
+			<class name="com.revature.cucumber.TestRunnerBatch" />
 		</classes>
-
 	</test> <!-- Default test -->
 </suite> <!-- Default suite -->
