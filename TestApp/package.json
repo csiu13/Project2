@@ -23,6 +23,7 @@
     "@angular/router": "^6.1.0",
     "core-js": "^2.5.4",
     "nodemon": "^1.18.3",
+    "pm2": "^3.0.3",
     "protractor": "~5.3.0",
     "protractor-beautiful-reporter": "^1.2.4",
     "rxjs": "^6.0.0",
