@@ -1,58 +1,48 @@
 package com.revature.testng;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
-import com.revature.dao.LoginDaoImpl;
 import com.revature.dao.BatchDaoImpl;
+import com.revature.dao.LoginDaoImpl;
 import com.revature.model.BatchAnnotation;
-import com.revature.model.LoginAnnotation;
 import com.revature.pagefactory.BatchPage;
 import com.revature.pagefactory.LoginPage;
 
 public class Assignforce_Testing_KW {
 
-	public static WebDriverWait wait;
-
 	public static WebDriver driver = null;
+	public static WebDriverWait wait = null;
 	public static BatchDaoImpl batch = new BatchDaoImpl();
 	public static LoginDaoImpl login = new LoginDaoImpl();
 
-	@BeforeTest
+	@BeforeMethod
 	public static void launchApplicationAsAdmin() {
 		File chrome = new File("src/test/resources/chromedriver.exe");
 		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
 		driver = new ChromeDriver();
 //		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("https://assignforce-client.cfapps.io/login");
-
-		// login as admin
-		LoginPage page = new LoginPage(driver);
-		wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.elementToBeClickable(page.login));
-		LoginAnnotation admin = new LoginAnnotation();
-		admin = login.findLoginById(1);
-		page.email.sendKeys(admin.getUsername());
-		page.pwd.sendKeys(admin.getPassword());
-		page.login.click();
 	}
 
-	@AfterTest
+	@AfterMethod
 	public void logoutAndCloseDriver() {
+		BatchPage tab = new BatchPage(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(tab.logout));
 		driver.close();
 	}
-
+	
 	@Test
+<<<<<<< HEAD
 	public void testAdminLogin() {
 
 		// wait until login button is clickable
@@ -80,6 +70,13 @@ public class Assignforce_Testing_KW {
 		user = login.findLoginById(2);
 		page.email.sendKeys(user.getUsername());
 		page.pwd.sendKeys(user.getPassword());
+=======
+	public void testDriver() {
+		launchApplicationAsAdmin();
+		LoginPage page = new LoginPage(driver);
+		page.email.sendKeys("svp@revature.com");
+		page.pwd.sendKeys("p@$$w0rd");
+>>>>>>> timSelenium
 		page.login.click();
 		driver.close();
 	}
@@ -613,8 +610,12 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
+<<<<<<< HEAD
 	@Ignore
 	public void adminCreateNewBatchAndCancel0() {
+=======
+	public void adminCreateNewBatchAndCancel10() {
+>>>>>>> timSelenium
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -735,6 +736,7 @@ public class Assignforce_Testing_KW {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
 		tab.batchTab.click();
+		
 		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdown));
 		tab.coreDropdown.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdownNet));
@@ -837,81 +839,17 @@ public class Assignforce_Testing_KW {
 		// click all options under skills
 		tab.skillsDropdown.click();
 		tab.skillsDropdownCorejava.click();
-		tab.skillsDropdownJunit.click();
-		tab.skillsDropdownSelenium.click();
-		tab.skillsDropdownSpring.click();
-		tab.skillsDropdownXYZ.click();
-		tab.skillsDropdownSalesforce.click();
-		tab.skillsDropdownCoresdet.click();
-		tab.skillsDropdownServlets.click();
-		tab.skillsDropdownJSP.click();
-		tab.skillsDropdownCpp.click();
-		tab.skillsDropdownOracle.click();
-		tab.skillsDropdownJdbc.click();
-		tab.skillsDropdownFreemarker.click();
-		tab.skillsDropdownCss.click();
-		tab.skillsDropdownjQuery.click();
-		tab.skillsDropdownHibernate.click();
-		tab.skillsDropdownRest.click();
-		tab.skillsDropdownSoap.click();
-		tab.skillsDropdownAspmvc.click();
-		tab.skillsDropdownAspapi.click();
-		tab.skillsDropdownCsharp.click();
-		tab.skillsDropdownAdonet.click();
-		tab.skillsDropdownMstest.click();
-		tab.skillsDropdownTsql.click();
-		tab.skillsDropdownEntity.click();
-		tab.skillsDropdownXunit.click();
-		tab.skillsDropdownNlog.click();
-		tab.skillsDropdownIis.click();
-		tab.skillsDropdownTestng.click();
-		tab.skillsDropdownManual.click();
-		tab.skillsDropdownPython.click();
-		tab.skillsDropdownUft.click();
-		tab.skillsDropdownCucumber.click();
-		tab.skillsDropdownC.click();
-		tab.skillsDropdownCorenet.click();
-		tab.skillsDropdownCorejava.click();
-		tab.skillsDropdownJunit.click();
-		tab.skillsDropdownSelenium.click();
-		tab.skillsDropdownSpring.click();
-		tab.skillsDropdownXYZ.click();
-		tab.skillsDropdownSalesforce.click();
-		tab.skillsDropdownCoresdet.click();
-		tab.skillsDropdownServlets.click();
-		tab.skillsDropdownJSP.click();
-		tab.skillsDropdownCpp.click();
-		tab.skillsDropdownOracle.click();
-		tab.skillsDropdownJdbc.click();
-		tab.skillsDropdownFreemarker.click();
-		tab.skillsDropdownCss.click();
-		tab.skillsDropdownjQuery.click();
-		tab.skillsDropdownHibernate.click();
-		tab.skillsDropdownRest.click();
-		tab.skillsDropdownSoap.click();
-		tab.skillsDropdownAspmvc.click();
-		tab.skillsDropdownAspapi.click();
-		tab.skillsDropdownCsharp.click();
-		tab.skillsDropdownAdonet.click();
-		tab.skillsDropdownMstest.click();
-		tab.skillsDropdownTsql.click();
-		tab.skillsDropdownEntity.click();
-		tab.skillsDropdownXunit.click();
-		tab.skillsDropdownNlog.click();
-		tab.skillsDropdownIis.click();
-		tab.skillsDropdownTestng.click();
-		tab.skillsDropdownManual.click();
-		tab.skillsDropdownPython.click();
-		tab.skillsDropdownUft.click();
-		tab.skillsDropdownCucumber.click();
-		tab.skillsDropdownC.click();
 		tab.skillsDropdownCorenet.click();
 
 	}
 
 	// incomplete, need to assert that trainers dropdown is more than usual
+<<<<<<< HEAD
 	@Test
 	@Ignore
+=======
+	@Test 
+>>>>>>> timSelenium
 	public void adminIterateThroughBatchCoreUntilMemoryFault() {
 		// click on batch tab spam clicks
 		// CHECK THE TRAINERS TAB! ITS WHERE THE INFORMATION FROM TABBING IS STORED
@@ -931,8 +869,12 @@ public class Assignforce_Testing_KW {
 
 	}
 
+<<<<<<< HEAD
 	@Test
 	@Ignore
+=======
+	@Test 
+>>>>>>> timSelenium
 	public void adminIterateThroughTrainers() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -941,32 +883,24 @@ public class Assignforce_Testing_KW {
 		tab.coreDropdown.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdownJava));
 		tab.coreDropdownJava.click();
+		
+		wait.until(ExpectedConditions.elementToBeClickable(tab.calendar));
 		tab.calendar.click();
 		tab.today.click();
+		
+		wait.until(ExpectedConditions.elementToBeClickable(tab.trainerDropdown));
 		tab.trainerDropdown.click();
 		tab.trainer1.click();
 		tab.trainerDropdown.click();
 		tab.trainer2.click();
-		tab.trainerDropdown.click();
-		tab.trainer3.click();
-		tab.trainerDropdown.click();
-		tab.trainer4.click();
-		tab.trainerDropdown.click();
-		tab.trainer5.click();
-		tab.trainerDropdown.click();
-		tab.trainer6.click();
-		tab.trainerDropdown.click();
-		tab.trainer7.click();
-		tab.trainerDropdown.click();
-		tab.trainer8.click();
-		tab.trainerDropdown.click();
-		tab.trainer9.click();
-		tab.trainerDropdown.click();
-		tab.trainer10.click();
 	}
 
+<<<<<<< HEAD
 	@Test
 	@Ignore
+=======
+	@Test 
+>>>>>>> timSelenium
 	public void adminIterateThroughCotrainers() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -983,28 +917,14 @@ public class Assignforce_Testing_KW {
 		tab.august.click();
 		tab.cotrainerDropdown.click();
 		tab.fred.click();
-		tab.cotrainerDropdown.click();
-		tab.joe.click();
-		tab.cotrainerDropdown.click();
-		tab.brian.click();
-		tab.cotrainerDropdown.click();
-		tab.taylor.click();
-		tab.cotrainerDropdown.click();
-		tab.patrick.click();
-		tab.cotrainerDropdown.click();
-		tab.yuvi.click();
-		tab.cotrainerDropdown.click();
-		tab.steven.click();
-		tab.cotrainerDropdown.click();
-		tab.ryan.click();
-		tab.cotrainerDropdown.click();
-		tab.richard.click();
-		tab.cotrainerDropdown.click();
-		tab.nicholas.click();
 	}
 
+<<<<<<< HEAD
 	@Test
 	@Ignore
+=======
+	@Test 
+>>>>>>> timSelenium
 	public void adminIterateThroughLocations() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -1049,7 +969,7 @@ public class Assignforce_Testing_KW {
 		tab.lastBuilding.click();
 	}
 
-	@Test
+	@Test 
 	public void adminIterateThroughRoom() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -1058,17 +978,57 @@ public class Assignforce_Testing_KW {
 		tab.coreDropdown.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdownJava));
 		tab.coreDropdownJava.click();
+		
+		wait.until(ExpectedConditions.elementToBeClickable(tab.calendar));
 		tab.calendar.click();
 		tab.today.click();
+		
+		wait.until(ExpectedConditions.elementToBeClickable(tab.trainerDropdown));
 		tab.trainerDropdown.click();
 		tab.trainer1.click();
+		
+		wait.until(ExpectedConditions.elementToBeClickable(tab.cotrainerDropdown));
 		tab.cotrainerDropdown.click();
 		tab.august.click();
+		
+		wait.until(ExpectedConditions.elementToBeClickable(tab.locationDropdown));
 		tab.locationDropdown.click();
 		tab.revature.click();
-		tab.roomDropdown.click();
-		tab.firstRoom.click();
-		tab.roomDropdown.click();
-		tab.lastRoom.click();
+	}
+
+	//test multiple and delete under batches can't delete
+	@Test 
+	public void adminEditSingleBatch() {
+		BatchPage tab = new BatchPage(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
+		tab.batchTab.click();
+		wait.until(ExpectedConditions.elementToBeClickable(tab.editBatch1));
+		tab.editBatch1.click();
+		tab.editBatch2.click();
+		tab.editBatch3.click();
+		tab.editBatch4.click();
+		tab.editBatch5.click();
+
+	}
+	
+	//test checkbox and edit (DOEST WORK)
+	@Test 
+	public void adminEditMultipleBatch () {
+		BatchPage tab = new BatchPage(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
+		tab.batchTab.click();
+		
+		wait.until(ExpectedConditions.elementToBeClickable(tab.checkbox1));
+
+		tab.checkbox1.click();
+		tab.checkbox2.click();
+		tab.checkbox3.click();
+		tab.checkbox4.click();
+		tab.checkbox5.click();
+		tab.editBatch1.click();
+		tab.editBatch2.click();
+		tab.editBatch3.click();
+		tab.editBatch4.click();
+		tab.editBatch5.click();
 	}
 }

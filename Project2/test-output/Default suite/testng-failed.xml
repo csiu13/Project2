@@ -5,6 +5,7 @@
     <classes>
       <class name="com.revature.testng.Assignforce_Testing_KW">
         <methods>
+<<<<<<< HEAD
           <include name="adminCreateNewBatchAndCancel3"/>
           <include name="adminCreateNewBatchAndCancel2"/>
           <include name="launchApplicationAsAdmin"/>
@@ -12,6 +13,10 @@
           <include name="logoutAndCloseDriver"/>
           <include name="testUserLogin"/>
           <include name="adminCreateNewBatchAndCancel"/>
+=======
+          <include name="launchApplicationAsAdmin"/>
+          <include name="logoutAndCloseDriver"/>
+>>>>>>> timSelenium
           <include name="adminIterateThroughRoom"/>
         </methods>
       </class> <!-- com.revature.testng.Assignforce_Testing_KW -->
