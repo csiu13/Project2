@@ -4,8 +4,8 @@ pipeline {
         stage('Build') {
             steps {
                 dir('./TestApp') {
-                    //sh 'pm2 stop 0'
-                    //sh 'pm2 update'
+                    sh 'pm2 stop 0'
+                    sh 'pm2 delete 0'
                 }
                 dir('./Project2') {
                     sh 'mvn clean'
@@ -33,8 +33,8 @@ pipeline {
                 dir('./TestApp') {
                     sh 'ng build'
                     //sh 'cat ./dist/TestApp/index.html | sed \'s|<base href=\"/\">|<base href=\"/TestApp/\">|g\' > ./dist/TestApp/index.html'
-                    sh 'cp -r ../Project2/target/surefire-reports/index.html ./dist/TestApp/seleniumResults.html'
-                    sh 'cp -r ./tmp/report.html ./dist/TestApp/protractorResults.html'
+                    sh 'cp -r ../Project2/target/surefire-reports ./dist/TestApp/surefire-reports'
+                    sh 'cp -r ./tmp ./dist/TestApp/tmp'
                 }
                 dir('./Project2') {
                     sh 'echo $CATALINA_HOME'
