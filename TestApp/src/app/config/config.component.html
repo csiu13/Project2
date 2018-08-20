@@ -1,10 +1,11 @@
 <h3>Get configuration from JSON file</h3>
 <div>
-  <button (click)="clear(); showConfig()">Get</button>
+  <!-- <button (click)="clear(); showConfig()">Get</button>
   <button (click)="clear(); showConfigResponse()">GetResponse</button>
   <button (click)="clear()">clear</button>
-  <button (click)="clear(); makeError()">error</button>
-  <button (click)="runTests();">Run Tests</button>
+  <button (click)="clear(); makeError()">error</button> -->
+  <button><a href="seleniumReports.html">Run Selenium Tests</a></button>
+  <button><a href="protractorReports.html">Run Protractor Tests</a></button>
   <span *ngIf="message">
     <p>Heroes API URL is "{{message}}"</p>
     <div *ngIf="headers">
