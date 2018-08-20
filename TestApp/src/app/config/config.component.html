@@ -14,15 +14,10 @@
   <button (click)="clear(); showConfigResponse()">GetResponse</button>
   <button (click)="clear()">clear</button>
   <button (click)="clear(); makeError()">error</button> -->
+<div style="text-align: center">
   <button><a href="surefire-reports/index.html">Run Selenium Tests</a></button>
   <span *ngIf="message">
     <p>Heroes API URL is "{{message}}"</p>
-    <div *ngIf="headers">
-      Response headers:
-      <ul>
-        <li *ngFor="let header of headers">{{header}}</li>
-      </ul>
-    </div>
   </span>
 </div>
 <div style="padding: 10px"></div>
