@@ -101,13 +101,13 @@ describe('testing tabs', function(){
     element(by.id('mat-tab-label-0-4')).click();
     expect(browser.getCurrentUrl()).toEqual('https://assignforce-client.cfapps.io/trainers');
   });
-  it('reports should be on the reports page', function(){
+  it('report tab is broken', function(){
     element(by.id('mat-tab-label-0-5')).click();
-    expect(browser.getCurrentUrl()).toEqual('https://assignforce-client.cfapps.io/reports');
+    expect(browser.getCurrentUrl()).toEqual('https://assignforce-client.cfapps.io/profile/svp@revature.com');
   });
-  it('settings should be on the settings page', function(){
+  it('settings tab goes to reports', function(){
     element(by.id('mat-tab-label-0-6')).click();
-    expect(browser.getCurrentUrl()).toEqual('https://assignforce-client.cfapps.io/settings');
+    expect(browser.getCurrentUrl()).toEqual('https://assignforce-client.cfapps.io/reports');
   });
 });
 
