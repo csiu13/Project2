@@ -4,8 +4,8 @@ pipeline {
         stage('Build') {
             steps {
                 dir('./TestApp') {
-                    sh 'pm2 stop 0'
-                    sh 'pm2 update'
+                    //sh 'pm2 stop 0'
+                    //sh 'pm2 update'
                 }
                 dir('./Project2') {
                     sh 'mvn clean'
