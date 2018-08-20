@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/java/com/revature/cucumber/loginOutline.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/java/com/revature/cucumber/CreateBatchOutline.feature");
 formatter.feature({
   "line": 1,
   "name": "login",
@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
-  "line": 8,
+  "line": 3,
   "name": "",
   "description": "",
   "id": "login;",
@@ -15,67 +15,114 @@ formatter.scenarioOutline({
   "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 9,
-  "name": "the application is opened",
+  "line": 4,
+  "name": "the user navigates to the batch tab",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 10,
-  "name": "valid \u003cusername\u003e and \u003cpassword\u003e are entered",
+  "line": 5,
+  "name": "the user inputs \u003ccore\u003e, \u003cstart date\u003e, \u003ctrainer\u003e, \u003cco-trainer\u003e, \u003clocation\u003e, \u003cbuilding\u003e, and \u003croom\u003e",
   "keyword": "When "
 });
 formatter.step({
-  "line": 11,
-  "name": "the user clicks the login button",
+  "line": 6,
+  "name": "the user clicks the cancel button",
   "keyword": "And "
 });
 formatter.step({
-  "line": 12,
-  "name": "the user should be able to gain access to the application",
+  "line": 7,
+  "name": "the program should clear all fields",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 15,
+  "line": 9,
   "name": "",
   "description": "",
   "id": "login;;",
   "rows": [
     {
       "cells": [
-        "username",
-        "password"
+        "core",
+        "start date",
+        "trainer",
+        "co-trainer",
+        "location",
+        "building",
+        "room"
       ],
-      "line": 16,
+      "line": 10,
       "id": "login;;;1"
     },
     {
       "cells": [
-        "\"svp@revature.com\"",
-        "\"p@$$w0rd\""
+        "\"Java\"",
+        "\"today\"",
+        "\"August\"",
+        "\"Yuvi\"",
+        "\"Revature\"",
+        "\"HQ\"",
+        "214"
       ],
-      "line": 17,
+      "line": 11,
       "id": "login;;;2"
     },
     {
       "cells": [
-        "\"test.trainer@revature.com\"",
-        "\"p@$$w0rd\""
+        "\"Java\"",
+        "\"today\"",
+        "\"Yuvi\"",
+        "\"Peter\"",
+        "\"Capital One\"",
+        "\"Chicago\"",
+        "208"
       ],
-      "line": 18,
+      "line": 12,
       "id": "login;;;3"
+    },
+    {
+      "cells": [
+        "\"Net\"",
+        "\"today\"",
+        "\"Yuvi\"",
+        "\"Yuvi\"",
+        "\"Capital One\"",
+        "\"HQ\"",
+        "208"
+      ],
+      "line": 13,
+      "id": "login;;;4"
+    },
+    {
+      "cells": [
+        "\"Net\"",
+        "\"today\"",
+        "\"Peter\"",
+        "\"Peter\"",
+        "\"Revature\"",
+        "\"HQ\"",
+        "214"
+      ],
+      "line": 14,
+      "id": "login;;;5"
+    },
+    {
+      "cells": [
+        "\"Net\"",
+        "\"today\"",
+        "\"Yuvi\"",
+        "\"August\"",
+        "\"Capital One\"",
+        "\"Chicago\"",
+        "208"
+      ],
+      "line": 15,
+      "id": "login;;;6"
     }
   ],
   "keyword": "Examples"
 });
-formatter.background({
-  "line": 3,
-  "name": "",
-  "description": "User navigates to Assignforce homepage Given\nuser is on login page",
-  "type": "background",
-  "keyword": "Background"
-});
 formatter.scenario({
-  "line": 17,
+  "line": 11,
   "name": "",
   "description": "",
   "id": "login;;;2",
@@ -83,75 +130,94 @@ formatter.scenario({
   "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 9,
-  "name": "the application is opened",
+  "line": 4,
+  "name": "the user navigates to the batch tab",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 10,
-  "name": "valid \"svp@revature.com\" and \"p@$$w0rd\" are entered",
+  "line": 5,
+  "name": "the user inputs \"Java\", \"today\", \"August\", \"Yuvi\", \"Revature\", \"HQ\", and 214",
   "matchedColumns": [
     0,
-    1
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
   ],
   "keyword": "When "
 });
 formatter.step({
-  "line": 11,
-  "name": "the user clicks the login button",
+  "line": 6,
+  "name": "the user clicks the cancel button",
   "keyword": "And "
 });
 formatter.step({
-  "line": 12,
-  "name": "the user should be able to gain access to the application",
+  "line": 7,
+  "name": "the program should clear all fields",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "GC_Login.the_application_is_opened()"
+  "location": "GC_Batch.the_user_navigates_to_the_batch_tab()"
 });
 formatter.result({
-  "duration": 7123288240,
+  "duration": 13838946089,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "svp@revature.com",
-      "offset": 7
+      "val": "Java",
+      "offset": 17
     },
     {
-      "val": "p@$$w0rd",
-      "offset": 30
+      "val": "today",
+      "offset": 25
+    },
+    {
+      "val": "August",
+      "offset": 34
+    },
+    {
+      "val": "Yuvi",
+      "offset": 44
+    },
+    {
+      "val": "Revature",
+      "offset": 52
+    },
+    {
+      "val": "HQ",
+      "offset": 64
+    },
+    {
+      "val": "214",
+      "offset": 73
     }
   ],
-  "location": "GC_Login.valid_and_are_entered(String,String)"
+  "location": "GC_Batch.the_user_inputs_and(String,String,String,String,String,String,int)"
 });
 formatter.result({
-  "duration": 308293845,
-  "error_message": "java.lang.NullPointerException\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:498)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)\r\n\tat com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:315)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:44)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:301)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:298)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:686)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:682)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)\r\n\tat com.revature.cucumber.GC_Login.valid_and_are_entered(GC_Login.java:38)\r\n\tat ✽.When valid \"svp@revature.com\" and \"p@$$w0rd\" are entered(src/test/java/com/revature/cucumber/loginOutline.feature:10)\r\n",
-  "status": "failed"
+  "duration": 15418173989,
+  "status": "passed"
 });
 formatter.match({
-  "location": "GC_Login.the_user_clicks_the_login_button()"
+  "location": "GC_Batch.the_user_clicks_the_cancel_button()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 685311883,
+  "status": "passed"
 });
 formatter.match({
-  "location": "GC_Login.the_user_should_be_able_to_gain_access_to_the_application()"
+  "location": "GC_Batch.the_program_should_clear_all_fields()"
 });
 formatter.result({
-  "status": "skipped"
-});
-formatter.background({
-  "line": 3,
-  "name": "",
-  "description": "User navigates to Assignforce homepage Given\nuser is on login page",
-  "type": "background",
-  "keyword": "Background"
+  "duration": 2135356927,
+  "status": "passed"
 });
 formatter.scenario({
-  "line": 18,
+  "line": 12,
   "name": "",
   "description": "",
   "id": "login;;;3",
@@ -159,63 +225,375 @@ formatter.scenario({
   "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 9,
-  "name": "the application is opened",
+  "line": 4,
+  "name": "the user navigates to the batch tab",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 10,
-  "name": "valid \"test.trainer@revature.com\" and \"p@$$w0rd\" are entered",
+  "line": 5,
+  "name": "the user inputs \"Java\", \"today\", \"Yuvi\", \"Peter\", \"Capital One\", \"Chicago\", and 208",
   "matchedColumns": [
     0,
-    1
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
   ],
   "keyword": "When "
 });
 formatter.step({
-  "line": 11,
-  "name": "the user clicks the login button",
+  "line": 6,
+  "name": "the user clicks the cancel button",
   "keyword": "And "
 });
 formatter.step({
-  "line": 12,
-  "name": "the user should be able to gain access to the application",
+  "line": 7,
+  "name": "the program should clear all fields",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "GC_Login.the_application_is_opened()"
+  "location": "GC_Batch.the_user_navigates_to_the_batch_tab()"
 });
 formatter.result({
-  "duration": 3114965796,
-  "error_message": "org.openqa.selenium.WebDriverException: unknown error: cannot determine loading status\nfrom unknown error: cannot determine loading status\nfrom disconnected: received Inspector.detached event\n  (Session info: chrome\u003d68.0.3440.106)\n  (Driver info: chromedriver\u003d2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform\u003dWindows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nBuild info: version: \u00273.11.0\u0027, revision: \u0027e59cfb3\u0027, time: \u00272018-03-11T20:26:55.152Z\u0027\nSystem info: host: \u0027LAPTOP-UBH3B9HL\u0027, ip: \u002710.0.0.90\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_172\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\\Users\\Kevin\\AppData\\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:55920}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 68.0.3440.106, webStorageEnabled: true}\nSession ID: 85c9ae83805c91c243d86d627c4b3713\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:273)\r\n\tat com.revature.cucumber.GC_Login.launchApplication(GC_Login.java:30)\r\n\tat com.revature.cucumber.GC_Login.the_application_is_opened(GC_Login.java:23)\r\n\tat ✽.Given the application is opened(src/test/java/com/revature/cucumber/loginOutline.feature:9)\r\n",
-  "status": "failed"
+  "duration": 13796999834,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "test.trainer@revature.com",
-      "offset": 7
+      "val": "Java",
+      "offset": 17
     },
     {
-      "val": "p@$$w0rd",
-      "offset": 39
+      "val": "today",
+      "offset": 25
+    },
+    {
+      "val": "Yuvi",
+      "offset": 34
+    },
+    {
+      "val": "Peter",
+      "offset": 42
+    },
+    {
+      "val": "Capital One",
+      "offset": 51
+    },
+    {
+      "val": "Chicago",
+      "offset": 66
+    },
+    {
+      "val": "208",
+      "offset": 80
     }
   ],
-  "location": "GC_Login.valid_and_are_entered(String,String)"
+  "location": "GC_Batch.the_user_inputs_and(String,String,String,String,String,String,int)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 16669816994,
+  "status": "passed"
 });
 formatter.match({
-  "location": "GC_Login.the_user_clicks_the_login_button()"
+  "location": "GC_Batch.the_user_clicks_the_cancel_button()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 734410522,
+  "status": "passed"
 });
 formatter.match({
-  "location": "GC_Login.the_user_should_be_able_to_gain_access_to_the_application()"
+  "location": "GC_Batch.the_program_should_clear_all_fields()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 2140826534,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 13,
+  "name": "",
+  "description": "",
+  "id": "login;;;4",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 4,
+  "name": "the user navigates to the batch tab",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 5,
+  "name": "the user inputs \"Net\", \"today\", \"Yuvi\", \"Yuvi\", \"Capital One\", \"HQ\", and 208",
+  "matchedColumns": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 6,
+  "name": "the user clicks the cancel button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 7,
+  "name": "the program should clear all fields",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "GC_Batch.the_user_navigates_to_the_batch_tab()"
+});
+formatter.result({
+  "duration": 14122392967,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Net",
+      "offset": 17
+    },
+    {
+      "val": "today",
+      "offset": 24
+    },
+    {
+      "val": "Yuvi",
+      "offset": 33
+    },
+    {
+      "val": "Yuvi",
+      "offset": 41
+    },
+    {
+      "val": "Capital One",
+      "offset": 49
+    },
+    {
+      "val": "HQ",
+      "offset": 64
+    },
+    {
+      "val": "208",
+      "offset": 73
+    }
+  ],
+  "location": "GC_Batch.the_user_inputs_and(String,String,String,String,String,String,int)"
+});
+formatter.result({
+  "duration": 16086328267,
+  "status": "passed"
+});
+formatter.match({
+  "location": "GC_Batch.the_user_clicks_the_cancel_button()"
+});
+formatter.result({
+  "duration": 803601245,
+  "status": "passed"
+});
+formatter.match({
+  "location": "GC_Batch.the_program_should_clear_all_fields()"
+});
+formatter.result({
+  "duration": 2154723555,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 14,
+  "name": "",
+  "description": "",
+  "id": "login;;;5",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 4,
+  "name": "the user navigates to the batch tab",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 5,
+  "name": "the user inputs \"Net\", \"today\", \"Peter\", \"Peter\", \"Revature\", \"HQ\", and 214",
+  "matchedColumns": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 6,
+  "name": "the user clicks the cancel button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 7,
+  "name": "the program should clear all fields",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "GC_Batch.the_user_navigates_to_the_batch_tab()"
+});
+formatter.result({
+  "duration": 11164654131,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Net",
+      "offset": 17
+    },
+    {
+      "val": "today",
+      "offset": 24
+    },
+    {
+      "val": "Peter",
+      "offset": 33
+    },
+    {
+      "val": "Peter",
+      "offset": 42
+    },
+    {
+      "val": "Revature",
+      "offset": 51
+    },
+    {
+      "val": "HQ",
+      "offset": 63
+    },
+    {
+      "val": "214",
+      "offset": 72
+    }
+  ],
+  "location": "GC_Batch.the_user_inputs_and(String,String,String,String,String,String,int)"
+});
+formatter.result({
+  "duration": 15444208276,
+  "status": "passed"
+});
+formatter.match({
+  "location": "GC_Batch.the_user_clicks_the_cancel_button()"
+});
+formatter.result({
+  "duration": 681139697,
+  "status": "passed"
+});
+formatter.match({
+  "location": "GC_Batch.the_program_should_clear_all_fields()"
+});
+formatter.result({
+  "duration": 2150345629,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 15,
+  "name": "",
+  "description": "",
+  "id": "login;;;6",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 4,
+  "name": "the user navigates to the batch tab",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 5,
+  "name": "the user inputs \"Net\", \"today\", \"Yuvi\", \"August\", \"Capital One\", \"Chicago\", and 208",
+  "matchedColumns": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 6,
+  "name": "the user clicks the cancel button",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 7,
+  "name": "the program should clear all fields",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "GC_Batch.the_user_navigates_to_the_batch_tab()"
+});
+formatter.result({
+  "duration": 10876900239,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Net",
+      "offset": 17
+    },
+    {
+      "val": "today",
+      "offset": 24
+    },
+    {
+      "val": "Yuvi",
+      "offset": 33
+    },
+    {
+      "val": "August",
+      "offset": 41
+    },
+    {
+      "val": "Capital One",
+      "offset": 51
+    },
+    {
+      "val": "Chicago",
+      "offset": 66
+    },
+    {
+      "val": "208",
+      "offset": 80
+    }
+  ],
+  "location": "GC_Batch.the_user_inputs_and(String,String,String,String,String,String,int)"
+});
+formatter.result({
+  "duration": 15855731868,
+  "status": "passed"
+});
+formatter.match({
+  "location": "GC_Batch.the_user_clicks_the_cancel_button()"
+});
+formatter.result({
+  "duration": 860879569,
+  "status": "passed"
+});
+formatter.match({
+  "location": "GC_Batch.the_program_should_clear_all_fields()"
+});
+formatter.result({
+  "duration": 2140188786,
+  "status": "passed"
 });
 });
