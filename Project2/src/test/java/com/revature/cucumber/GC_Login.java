@@ -4,6 +4,8 @@ import java.io.File;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.revature.pagefactory.LoginPage;
 
@@ -14,6 +16,7 @@ import cucumber.api.java.en.When;
 public class GC_Login {
 
 	static WebDriver driver;
+	static WebDriverWait wait;
 	
 	@Given("^the application is opened$")
 	public void the_application_is_opened() throws Throwable {
@@ -31,13 +34,17 @@ public class GC_Login {
 	@When("^valid \"([^\"]*)\" and \"([^\"]*)\" are entered$")
 	public void valid_and_are_entered(String arg1, String arg2) throws Throwable {
 		LoginPage page = new LoginPage(driver);
+		wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.elementToBeClickable(page.email));
 		page.email.sendKeys(arg1);
-		page.pwd.sendKeys(arg1);
+		page.pwd.sendKeys(arg2);
 	}
 
 	@When("^the user clicks the login button$")
 	public void the_user_clicks_the_login_button() throws Throwable {
 		LoginPage page = new LoginPage(driver);
+		wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.elementToBeClickable(page.login));
 		page.login.click();
 	}
 

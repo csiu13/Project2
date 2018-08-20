@@ -4,17 +4,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BatchPage {
-	public static WebDriverWait wait;
-
 	public BatchPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 
 	@FindBy(id = "mat-tab-label-0-1")
 	public WebElement batchTab;
+	
+	@FindBy(css = "#logoutBTN > strong") 
+	public WebElement logout;
 
 	// Core Curriculum dropdown menu options
 	@FindBy(xpath = "//*[@id=\"cdk-accordion-child-3\"]/div/form/div[1]/mat-form-field[1]/div/div[1]/div")
@@ -57,9 +57,9 @@ public class BatchPage {
 	public WebElement skillsDropdown;
 	@FindBy(css = "mat-pseudo-checkbox:first-of-type")
 	public WebElement skillsDropdownCorejava;
-	@FindBy(css = "#mat-option-127 > mat-pseudo-checkbox")
+	@FindBy(css = ".mat-pseudo-checkbox:nth-child(2)")
 	public WebElement skillsDropdownJunit;
-	@FindBy(css = "#mat-option-128 > mat-pseudo-checkbox")
+	@FindBy(css = "mat-pseudo-checkbox:nth-child(3)")
 	public WebElement skillsDropdownSelenium;
 	@FindBy(css = "#mat-option-129 > mat-pseudo-checkbox")
 	public WebElement skillsDropdownSpring;
@@ -123,7 +123,7 @@ public class BatchPage {
 	public WebElement skillsDropdownCucumber;
 	@FindBy(css = "#mat-option-159 > mat-pseudo-checkbox")
 	public WebElement skillsDropdownC;
-	@FindBy(css = "#mat-option-160 > mat-pseudo-checkbox")
+	@FindBy(css = "mat-pseudo-checkbox:last-of-type")
 	public WebElement skillsDropdownCorenet;
 
 	// Trainer options
@@ -153,11 +153,11 @@ public class BatchPage {
 	// Calendar options
 	@FindBy(xpath = "//*[@id=\"cdk-accordion-child-3\"]/div/form/div[2]/mat-form-field[1]/div/div[1]/div[1]/mat-datepicker-toggle/button")
 	public WebElement calendar;
-	@FindBy(css = "#mat-datepicker-2 > div.mat-calendar-content > mat-month-view > table > tbody > tr:nth-child(4) > td:nth-child(1)")
-	public WebElement today;
 	@FindBy(css = "#mat-datepicker-2 > div.mat-calendar-content > mat-month-view > table > tbody > tr:nth-child(4) > td:nth-child(2)")
-	public WebElement tomorrow;
+	public WebElement today;
 	@FindBy(css = "#mat-datepicker-2 > div.mat-calendar-content > mat-month-view > table > tbody > tr:nth-child(4) > td:nth-child(3)")
+	public WebElement tomorrow;
+	@FindBy(css = "#mat-datepicker-2 > div.mat-calendar-content > mat-month-view > table > tbody > tr:nth-child(4) > td:nth-child(4)")
 	public WebElement death;
 
 	// Co-Trainer options
@@ -209,6 +209,31 @@ public class BatchPage {
 	public WebElement firstRoom;
 	@FindBy(css = "mat-option:last-of-type")
 	public WebElement lastRoom;
+	
+	//checkboxes under all batches
+	@FindBy(css = "#mat-checkbox-4")
+	public WebElement checkbox1; 
+	@FindBy(css = "#mat-checkbox-5")
+	public WebElement checkbox2; 
+	@FindBy(css = "#mat-checkbox-6")
+	public WebElement checkbox3; 
+	@FindBy(css = "#mat-checkbox-7")
+	public WebElement checkbox4; 
+	@FindBy(css = "#mat-checkbox-8")
+	public WebElement checkbox5; 
+	
+	
+	//edit buttons under all batches
+	@FindBy(css = "mat-table > mat-row:nth-child(2) > mat-cell.mat-cell.cdk-column-Icons.mat-column-Icons.ng-star-inserted > button:nth-child(1)")
+	public WebElement editBatch1;
+	@FindBy(css = "mat-table > mat-row:nth-child(3) > mat-cell.mat-cell.cdk-column-Icons.mat-column-Icons.ng-star-inserted > button:nth-child(1)")
+	public WebElement editBatch2;
+	@FindBy(css = "mat-table > mat-row:nth-child(4) > mat-cell.mat-cell.cdk-column-Icons.mat-column-Icons.ng-star-inserted > button:nth-child(1)")
+	public WebElement editBatch3;
+	@FindBy(css = "mat-table > mat-row:nth-child(5) > mat-cell.mat-cell.cdk-column-Icons.mat-column-Icons.ng-star-inserted > button:nth-child(1)")
+	public WebElement editBatch4;
+	@FindBy(css = "mat-table > mat-row:nth-child(6) > mat-cell.mat-cell.cdk-column-Icons.mat-column-Icons.ng-star-inserted > button:nth-child(1)")
+	public WebElement editBatch5;
 	
 	@FindBy(css = "#cdk-accordion-child-3 > div > form > div:nth-child(5) > button:nth-child(1)")
 	public WebElement submitBatch;
