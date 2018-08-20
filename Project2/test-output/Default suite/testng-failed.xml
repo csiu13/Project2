@@ -5,28 +5,70 @@
     <classes>
       <class name="com.revature.testng.Assignforce_Testing_KW">
         <methods>
-<<<<<<< HEAD
           <include name="adminCreateNewBatchAndCancel3"/>
           <include name="adminCreateNewBatchAndCancel2"/>
-          <include name="launchApplicationAsAdmin"/>
-          <include name="testAdminLogin"/>
-          <include name="logoutAndCloseDriver"/>
+          <include name="adminIterateThroughBuildling"/>
+          <include name="adminIterateThroughSkillsList"/>
+          <include name="adminCreateNewBatchAndCancel8"/>
+          <include name="adminCreateNewBatchAndCancel5"/>
+          <include name="adminEditMultipleBatch"/>
+          <include name="adminEditSingleBatch"/>
           <include name="testUserLogin"/>
-          <include name="adminCreateNewBatchAndCancel"/>
-=======
-          <include name="launchApplicationAsAdmin"/>
-          <include name="logoutAndCloseDriver"/>
->>>>>>> timSelenium
+          <include name="adminCreateNewBatchAndCancel7"/>
+          <include name="adminCreateNewBatchAndCancel4"/>
+          <include name="adminCreateNewBatchAndCancel6"/>
           <include name="adminIterateThroughRoom"/>
+          <include name="testAdminLogin"/>
+          <include name="adminCreateNewBatchAndCancel10"/>
+          <include name="adminIterateThroughBatchCoreUntilMemoryFault"/>
+          <include name="adminIterateThroughBatchCoreList"/>
+          <include name="adminIterateThroughLocations"/>
+          <include name="launchApplicationAsAdmin"/>
+          <include name="adminCreateNewBatchAndCancel9"/>
+          <include name="logoutAndCloseDriver"/>
+          <include name="adminIterateThroughCotrainers"/>
+          <include name="adminCreateNewBatchAndSubmit"/>
+          <include name="adminCreateNewBatchAndCancel"/>
+          <include name="adminIterateThroughTrainers"/>
         </methods>
       </class> <!-- com.revature.testng.Assignforce_Testing_KW -->
-      <class name="com.revature.cucumber.TestRunner">
+      <class name="com.revature.testng.TabBarTests">
         <methods>
-          <include name="setUpClass"/>
-          <include name="feature"/>
-          <include name="tearDownClass"/>
+          <include name="testBatchesTab"/>
+          <include name="testOverviewTab"/>
+          <include name="testTrainersTab"/>
+          <include name="testLocationsTab"/>
+          <include name="afterTest"/>
+          <include name="testCurriculaTab"/>
+          <include name="testSettingsTab"/>
+          <include name="beforeTest"/>
+          <include name="testReportsTab"/>
         </methods>
-      </class> <!-- com.revature.cucumber.TestRunner -->
+      </class> <!-- com.revature.testng.TabBarTests -->
+      <class name="com.revature.testng.OverviewTests">
+        <methods>
+          <include name="testBuildingUp"/>
+          <include name="testCurriculumDown"/>
+          <include name="testEndUp"/>
+          <include name="testEndDown"/>
+          <include name="testProgressDown"/>
+          <include name="testRoomDown"/>
+          <include name="testStartUp"/>
+          <include name="testRoomUp"/>
+          <include name="testBuildingDown"/>
+          <include name="testLocationUp"/>
+          <include name="beforeTest"/>
+          <include name="testNameDown"/>
+          <include name="testTrainerDown"/>
+          <include name="testLocationDown"/>
+          <include name="testNameUp"/>
+          <include name="testCurriculumUp"/>
+          <include name="testProgressUp"/>
+          <include name="testTrainerUp"/>
+          <include name="testStartDown"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- com.revature.testng.OverviewTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

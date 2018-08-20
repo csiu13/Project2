@@ -162,7 +162,7 @@ formatter.match({
   "location": "GC_Batch.the_user_navigates_to_the_batch_tab()"
 });
 formatter.result({
-  "duration": 13838946089,
+  "duration": 9450491974,
   "status": "passed"
 });
 formatter.match({
@@ -199,21 +199,21 @@ formatter.match({
   "location": "GC_Batch.the_user_inputs_and(String,String,String,String,String,String,int)"
 });
 formatter.result({
-  "duration": 15418173989,
+  "duration": 12005071420,
   "status": "passed"
 });
 formatter.match({
   "location": "GC_Batch.the_user_clicks_the_cancel_button()"
 });
 formatter.result({
-  "duration": 685311883,
+  "duration": 622766690,
   "status": "passed"
 });
 formatter.match({
   "location": "GC_Batch.the_program_should_clear_all_fields()"
 });
 formatter.result({
-  "duration": 2135356927,
+  "duration": 2076875296,
   "status": "passed"
 });
 formatter.scenario({
@@ -257,7 +257,7 @@ formatter.match({
   "location": "GC_Batch.the_user_navigates_to_the_batch_tab()"
 });
 formatter.result({
-  "duration": 13796999834,
+  "duration": 10015905732,
   "status": "passed"
 });
 formatter.match({
@@ -294,21 +294,21 @@ formatter.match({
   "location": "GC_Batch.the_user_inputs_and(String,String,String,String,String,String,int)"
 });
 formatter.result({
-  "duration": 16669816994,
+  "duration": 11424965712,
   "status": "passed"
 });
 formatter.match({
   "location": "GC_Batch.the_user_clicks_the_cancel_button()"
 });
 formatter.result({
-  "duration": 734410522,
+  "duration": 519778197,
   "status": "passed"
 });
 formatter.match({
   "location": "GC_Batch.the_program_should_clear_all_fields()"
 });
 formatter.result({
-  "duration": 2140826534,
+  "duration": 2061711593,
   "status": "passed"
 });
 formatter.scenario({
@@ -352,7 +352,7 @@ formatter.match({
   "location": "GC_Batch.the_user_navigates_to_the_batch_tab()"
 });
 formatter.result({
-  "duration": 14122392967,
+  "duration": 8669685216,
   "status": "passed"
 });
 formatter.match({
@@ -389,21 +389,21 @@ formatter.match({
   "location": "GC_Batch.the_user_inputs_and(String,String,String,String,String,String,int)"
 });
 formatter.result({
-  "duration": 16086328267,
+  "duration": 12276013600,
   "status": "passed"
 });
 formatter.match({
   "location": "GC_Batch.the_user_clicks_the_cancel_button()"
 });
 formatter.result({
-  "duration": 803601245,
+  "duration": 630026944,
   "status": "passed"
 });
 formatter.match({
   "location": "GC_Batch.the_program_should_clear_all_fields()"
 });
 formatter.result({
-  "duration": 2154723555,
+  "duration": 2073149184,
   "status": "passed"
 });
 formatter.scenario({
@@ -447,7 +447,7 @@ formatter.match({
   "location": "GC_Batch.the_user_navigates_to_the_batch_tab()"
 });
 formatter.result({
-  "duration": 11164654131,
+  "duration": 7711823887,
   "status": "passed"
 });
 formatter.match({
@@ -484,21 +484,21 @@ formatter.match({
   "location": "GC_Batch.the_user_inputs_and(String,String,String,String,String,String,int)"
 });
 formatter.result({
-  "duration": 15444208276,
+  "duration": 11458849308,
   "status": "passed"
 });
 formatter.match({
   "location": "GC_Batch.the_user_clicks_the_cancel_button()"
 });
 formatter.result({
-  "duration": 681139697,
+  "duration": 503816205,
   "status": "passed"
 });
 formatter.match({
   "location": "GC_Batch.the_program_should_clear_all_fields()"
 });
 formatter.result({
-  "duration": 2150345629,
+  "duration": 2073796179,
   "status": "passed"
 });
 formatter.scenario({
@@ -542,7 +542,7 @@ formatter.match({
   "location": "GC_Batch.the_user_navigates_to_the_batch_tab()"
 });
 formatter.result({
-  "duration": 10876900239,
+  "duration": 8352942116,
   "status": "passed"
 });
 formatter.match({
@@ -579,21 +579,21 @@ formatter.match({
   "location": "GC_Batch.the_user_inputs_and(String,String,String,String,String,String,int)"
 });
 formatter.result({
-  "duration": 15855731868,
+  "duration": 12174187949,
   "status": "passed"
 });
 formatter.match({
   "location": "GC_Batch.the_user_clicks_the_cancel_button()"
 });
 formatter.result({
-  "duration": 860879569,
+  "duration": 651001056,
   "status": "passed"
 });
 formatter.match({
   "location": "GC_Batch.the_program_should_clear_all_fields()"
 });
 formatter.result({
-  "duration": 2140188786,
+  "duration": 2072236093,
   "status": "passed"
 });
 });

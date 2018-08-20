@@ -540,7 +540,6 @@ if(false) {}
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! C:\gitHub-repo\Project2\TestApp\src\styles.css */"./src/styles.css");
-module.exports = __webpack_require__(/*! C:\Users\Levin\Documents\RevatureProjects\Project2\TestApp\src\styles.css */"./src/styles.css");
 
 
 /***/ })
