@@ -57,7 +57,7 @@ public class Assignforce_Testing_KW_Users {
 	}
 	
 	//test settings as user - CANT IF TOO SMALL
-	@Test (groups = {"userTests"})
+	@Test
 	public void userSettings() {
 		SettingsPage tab = new SettingsPage(driver);
 		
@@ -108,6 +108,5 @@ public class Assignforce_Testing_KW_Users {
 		tab.saveAndEditProfile.click();
 		tab.saveAndEditProfile.click();
 	}
-	//test profile as a user
-		//cirricula edit focus as user
+	
 }
