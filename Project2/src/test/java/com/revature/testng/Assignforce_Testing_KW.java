@@ -31,8 +31,15 @@ public class Assignforce_Testing_KW {
 		File chrome = new File("src/test/resources/chromedriver.exe");
 		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
 		driver = new ChromeDriver();
-//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		LoginPage page = new LoginPage(driver);
 		driver.get("https://assignforce-client.cfapps.io/login");
+		wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.elementToBeClickable(page.login));
+		LoginAnnotation admin = new LoginAnnotation();
+		admin = login.findLoginById(1);
+		page.email.sendKeys(admin.getUsername());
+		page.pwd.sendKeys(admin.getPassword());
+		page.login.click();
 	}
 
 	@AfterMethod
@@ -41,50 +48,8 @@ public class Assignforce_Testing_KW {
 		wait.until(ExpectedConditions.elementToBeClickable(tab.logout));
 		driver.close();
 	}
-	
-	@Test
-
-	public void testAdminLogin() {
-
-		// wait until login button is clickable
-		LoginPage page = new LoginPage(driver);
-		wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.elementToBeClickable(page.login));
-
-		// pull from hibernate admin credentials
-		LoginAnnotation admin = new LoginAnnotation();
-		admin = login.findLoginById(1);
-		page.email.sendKeys(admin.getUsername());
-		page.pwd.sendKeys(admin.getPassword());
-		page.login.click();
-		driver.close();
-	}
 
 	@Test
-	public void testUserLogin() {
-
-		LoginPage page = new LoginPage(driver);
-		wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.elementToBeClickable(page.login));
-
-		LoginAnnotation user = new LoginAnnotation();
-		user = login.findLoginById(2);
-		page.email.sendKeys(user.getUsername());
-		page.pwd.sendKeys(user.getPassword());
-	}
-
-	public void testDriver() {
-		launchApplicationAsAdmin();
-		LoginPage page = new LoginPage(driver);
-		page.email.sendKeys("svp@revature.com");
-		page.pwd.sendKeys("p@$$w0rd");
-
-		page.login.click();
-		driver.close();
-	}
-
-	@Test
-	//
 	public void adminCreateNewBatchAndCancel() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -148,7 +113,6 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
-	//
 	public void adminCreateNewBatchAndCancel2() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -162,10 +126,10 @@ public class Assignforce_Testing_KW {
 
 		if (newBatch.getCore().equals("Java") == true) {
 			tab.coreDropdownJava.click();
-		} else  {
+		} else {
 			tab.coreDropdownNet.click();
 		}
-		
+
 		tab.calendar.click();
 		tab.today.click();
 
@@ -206,7 +170,6 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
-	//
 	public void adminCreateNewBatchAndCancel3() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -220,7 +183,7 @@ public class Assignforce_Testing_KW {
 
 		if (newBatch.getCore().equals("Java") == true) {
 			tab.coreDropdownJava.click();
-		} else  {
+		} else {
 			tab.coreDropdownNet.click();
 		}
 
@@ -264,7 +227,6 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
-	
 	public void adminCreateNewBatchAndCancel4() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -278,7 +240,7 @@ public class Assignforce_Testing_KW {
 
 		if (newBatch.getCore().equals("Java") == true) {
 			tab.coreDropdownJava.click();
-		} else  {
+		} else {
 			tab.coreDropdownNet.click();
 		}
 
@@ -322,7 +284,6 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
-	
 	public void adminCreateNewBatchAndCancel5() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -336,7 +297,7 @@ public class Assignforce_Testing_KW {
 
 		if (newBatch.getCore().equals("Java") == true) {
 			tab.coreDropdownJava.click();
-		} else  {
+		} else {
 			tab.coreDropdownNet.click();
 		}
 
@@ -380,7 +341,6 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
-	
 	public void adminCreateNewBatchAndCancel6() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -394,7 +354,7 @@ public class Assignforce_Testing_KW {
 
 		if (newBatch.getCore().equals("Java") == true) {
 			tab.coreDropdownJava.click();
-		} else  {
+		} else {
 			tab.coreDropdownNet.click();
 		}
 
@@ -438,7 +398,6 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
-	
 	public void adminCreateNewBatchAndCancel7() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -452,7 +411,7 @@ public class Assignforce_Testing_KW {
 
 		if (newBatch.getCore().equals("Java") == true) {
 			tab.coreDropdownJava.click();
-		} else  {
+		} else {
 			tab.coreDropdownNet.click();
 		}
 
@@ -496,7 +455,6 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
-	
 	public void adminCreateNewBatchAndCancel8() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -510,7 +468,7 @@ public class Assignforce_Testing_KW {
 
 		if (newBatch.getCore().equals("Java") == true) {
 			tab.coreDropdownJava.click();
-		} else  {
+		} else {
 			tab.coreDropdownNet.click();
 		}
 
@@ -554,7 +512,6 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
-	
 	public void adminCreateNewBatchAndCancel9() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -568,7 +525,7 @@ public class Assignforce_Testing_KW {
 
 		if (newBatch.getCore().equals("Java") == true) {
 			tab.coreDropdownJava.click();
-		} else  {
+		} else {
 			tab.coreDropdownNet.click();
 		}
 
@@ -626,7 +583,7 @@ public class Assignforce_Testing_KW {
 
 		if (newBatch.getCore().equals("Java") == true) {
 			tab.coreDropdownJava.click();
-		} else  {
+		} else {
 			tab.coreDropdownNet.click();
 		}
 
@@ -670,7 +627,6 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
-	
 	public void adminCreateNewBatchAndSubmit() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -684,7 +640,7 @@ public class Assignforce_Testing_KW {
 
 		if (newBatch.getCore().equals("Java") == true) {
 			tab.coreDropdownJava.click();
-		} else  {
+		} else {
 			tab.coreDropdownNet.click();
 		}
 
@@ -728,13 +684,12 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
-	
 	public void adminIterateThroughBatchCoreList() {
 		// click on batch tab spam clicks
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
 		tab.batchTab.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdown));
 		tab.coreDropdown.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdownNet));
@@ -820,7 +775,6 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
-	
 	public void adminIterateThroughSkillsList() {
 		// click on batch tab spam clicks
 		BatchPage tab = new BatchPage(driver);
@@ -842,7 +796,6 @@ public class Assignforce_Testing_KW {
 	}
 
 	// incomplete, need to assert that trainers dropdown is more than usual
-
 	@Test
 	public void adminIterateThroughBatchCoreUntilMemoryFault() {
 		// click on batch tab spam clicks
@@ -863,7 +816,6 @@ public class Assignforce_Testing_KW {
 
 	}
 
-
 	@Test
 	public void adminIterateThroughTrainers() {
 		BatchPage tab = new BatchPage(driver);
@@ -873,18 +825,17 @@ public class Assignforce_Testing_KW {
 		tab.coreDropdown.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdownJava));
 		tab.coreDropdownJava.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.calendar));
 		tab.calendar.click();
 		tab.today.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.trainerDropdown));
 		tab.trainerDropdown.click();
 		tab.trainer1.click();
 		tab.trainerDropdown.click();
 		tab.trainer2.click();
 	}
-
 
 	@Test
 	public void adminIterateThroughCotrainers() {
@@ -904,7 +855,6 @@ public class Assignforce_Testing_KW {
 		tab.cotrainerDropdown.click();
 		tab.fred.click();
 	}
-
 
 	@Test
 	public void adminIterateThroughLocations() {
@@ -928,7 +878,6 @@ public class Assignforce_Testing_KW {
 	}
 
 	@Test
-	
 	public void adminIterateThroughBuildling() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -951,7 +900,7 @@ public class Assignforce_Testing_KW {
 		tab.lastBuilding.click();
 	}
 
-	@Test 
+	@Test
 	public void adminIterateThroughRoom() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -960,26 +909,26 @@ public class Assignforce_Testing_KW {
 		tab.coreDropdown.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdownJava));
 		tab.coreDropdownJava.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.calendar));
 		tab.calendar.click();
 		tab.today.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.trainerDropdown));
 		tab.trainerDropdown.click();
 		tab.trainer1.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.cotrainerDropdown));
 		tab.cotrainerDropdown.click();
 		tab.august.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.locationDropdown));
 		tab.locationDropdown.click();
 		tab.revature.click();
 	}
 
-	//test multiple and delete under batches can't delete
-	@Test 
+	// test multiple and delete under batches can't delete
+	@Test
 	public void adminEditSingleBatch() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -992,14 +941,14 @@ public class Assignforce_Testing_KW {
 		tab.editBatch5.click();
 
 	}
-	
-	//test checkbox and edit (DOEST WORK)
-	@Test 
-	public void adminEditMultipleBatch () {
+
+	// test checkbox and edit (DOEST WORK)
+	@Test
+	public void adminEditMultipleBatch() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
 		tab.batchTab.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.checkbox1));
 
 		tab.checkbox1.click();

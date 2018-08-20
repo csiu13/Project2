@@ -14,10 +14,42 @@ import com.revature.pagefactory.LoginPage;
 
 public class TabBarTests {
 	
+	public static WebDriver driver = null;
+	
+	public static void launchApplication() {
+		File chrome = new File("src/test/resources/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
+		driver = new ChromeDriver();
+		driver.get("https://assignforce-client.cfapps.io/login");
+	}
+	
+	public static void loginSVP() {
+		launchApplication();
+		LoginPage page = new LoginPage(driver);
+		
+		  try {
+			  TimeUnit.SECONDS.sleep(5);
+		  } catch (InterruptedException e) {
+			  e.printStackTrace();
+		  }
+		
+		page.email.sendKeys("svp@revature.com");
+		page.pwd.sendKeys("p@$$w0rd");
+		page.login.click();
+	}
+
+	public static void loginTrainer() {
+		launchApplication();
+		LoginPage page = new LoginPage(driver);
+		page.email.sendKeys("test.trainer@revature.com");
+		page.pwd.sendKeys("p@$$w0rd");
+		page.login.click();
+	}
+	
 	  @BeforeTest
 	  public void beforeTest() {
 		  
-		  DriverAbstraction.loginSVP();
+		  loginSVP();
 		  
 		  try {
 			  TimeUnit.SECONDS.sleep(5);
@@ -28,64 +60,64 @@ public class TabBarTests {
 
 	  @AfterTest
 	  public void afterTest() {
-		  DriverAbstraction.driver.quit();
+		  driver.close();
 	  }
 	
 	@Test
 	public void testOverviewTab() {
 		
-		DriverAbstraction.driver.findElement(By.id("mat-tab-label-0-1")).click();
+		driver.findElement(By.id("mat-tab-label-0-1")).click();
 		
-		DriverAbstraction.driver.findElement(By.id("mat-tab-label-0-0")).click();
+		driver.findElement(By.id("mat-tab-label-0-0")).click();
 		
-		assert(DriverAbstraction.driver.getCurrentUrl().equals("https://assignforce-client.cfapps.io/overview"));
+		assert(driver.getCurrentUrl().equals("https://assignforce-client.cfapps.io/overview"));
 	}
 	
 	@Test
 	public void testBatchesTab() {
 		
-		DriverAbstraction.driver.findElement(By.id("mat-tab-label-0-1")).click();
+		driver.findElement(By.id("mat-tab-label-0-1")).click();
 		
-		assert(DriverAbstraction.driver.getCurrentUrl().equals("https://assignforce-client.cfapps.io/batches"));
+		assert(driver.getCurrentUrl().equals("https://assignforce-client.cfapps.io/batches"));
 	}
 	
 	@Test
 	public void testLocationsTab() {
 		
-		DriverAbstraction.driver.findElement(By.id("mat-tab-label-0-2")).click();
+		driver.findElement(By.id("mat-tab-label-0-2")).click();
 		
-		assert(DriverAbstraction.driver.getCurrentUrl().equals("https://assignforce-client.cfapps.io/locations"));
+		assert(driver.getCurrentUrl().equals("https://assignforce-client.cfapps.io/locations"));
 	}
 	
 	@Test
 	public void testCurriculaTab() {
 		
-		DriverAbstraction.driver.findElement(By.id("mat-tab-label-0-3")).click();
+		driver.findElement(By.id("mat-tab-label-0-3")).click();
 		
-		assert(DriverAbstraction.driver.getCurrentUrl().equals("https://assignforce-client.cfapps.io/curricula"));
+		assert(driver.getCurrentUrl().equals("https://assignforce-client.cfapps.io/curricula"));
 	}
 	
 	@Test
 	public void testTrainersTab() {
 		
-		DriverAbstraction.driver.findElement(By.id("mat-tab-label-0-4")).click();
+		driver.findElement(By.id("mat-tab-label-0-4")).click();
 		
-		assert(DriverAbstraction.driver.getCurrentUrl().equals("https://assignforce-client.cfapps.io/trainers"));
+		assert(driver.getCurrentUrl().equals("https://assignforce-client.cfapps.io/trainers"));
 	}
 	
 	@Test
 	public void testReportsTab() {
 		
-		DriverAbstraction.driver.findElement(By.id("mat-tab-label-0-5")).click();
+		driver.findElement(By.id("mat-tab-label-0-5")).click();
 		
-		assert(DriverAbstraction.driver.getCurrentUrl().equals("https://assignforce-client.cfapps.io/reports"));
+		assert(driver.getCurrentUrl().equals("https://assignforce-client.cfapps.io/reports"));
 		//fails, reports tab actually points to settings page
 	}
 	
 	@Test
 	public void testSettingsTab() {
 		
-		DriverAbstraction.driver.findElement(By.className("mat-tab-header-pagination-after")).click();
+		driver.findElement(By.className("mat-tab-header-pagination-after")).click();
 		
 		try {
 			TimeUnit.SECONDS.sleep(3);
@@ -94,10 +126,10 @@ public class TabBarTests {
 			e.printStackTrace();
 		}
 		
-		DriverAbstraction.driver.findElement(By.id("mat-tab-label-0-6")).click();
+		driver.findElement(By.id("mat-tab-label-0-6")).click();
 		
 		
-		assert(DriverAbstraction.driver.getCurrentUrl().equals("https://assignforce-client.cfapps.io/profile/svp@revature.com"));
+		assert(driver.getCurrentUrl().equals("https://assignforce-client.cfapps.io/profile/svp@revature.com"));
 		//fails, settings tab actually points to reports page
 	}
 }

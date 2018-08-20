@@ -12,10 +12,42 @@ import org.testng.annotations.Test;
 import com.revature.pagefactory.LoginPage;
 
 public class LoginTests {
+
+	public static WebDriver driver = null;
+	
+	public static void launchApplication() {
+		File chrome = new File("src/test/resources/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
+		driver = new ChromeDriver();
+		driver.get("https://assignforce-client.cfapps.io/login");
+	}
+	
+	public static void loginSVP() {
+		launchApplication();
+		LoginPage page = new LoginPage(driver);
+		
+		  try {
+			  TimeUnit.SECONDS.sleep(5);
+		  } catch (InterruptedException e) {
+			  e.printStackTrace();
+		  }
+		
+		page.email.sendKeys("svp@revature.com");
+		page.pwd.sendKeys("p@$$w0rd");
+		page.login.click();
+	}
+
+	public static void loginTrainer() {
+		launchApplication();
+		LoginPage page = new LoginPage(driver);
+		page.email.sendKeys("test.trainer@revature.com");
+		page.pwd.sendKeys("p@$$w0rd");
+		page.login.click();
+	}
 	
 	@Test
 	public void testLogin() {
-		DriverAbstraction.loginSVP();
+		loginSVP();
 		
 		try {
 			TimeUnit.SECONDS.sleep(5);
@@ -23,14 +55,14 @@ public class LoginTests {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		assert(DriverAbstraction.driver.getCurrentUrl().equals("https://assignforce-client.cfapps.io/overview"));
+		assert(driver.getCurrentUrl().equals("https://assignforce-client.cfapps.io/overview"));
 
-		DriverAbstraction.driver.quit();
+		driver.close();
 	}
 	
 	@Test
 	public void testLogout() {
-		DriverAbstraction.loginSVP();
+		loginSVP();
 		
 		try {
 			TimeUnit.SECONDS.sleep(5);
@@ -39,7 +71,7 @@ public class LoginTests {
 			e.printStackTrace();
 		}
 		
-		DriverAbstraction.driver.findElement(By.id("logoutBTN")).click();
+		driver.findElement(By.id("logoutBTN")).click();
 		try {
 			TimeUnit.SECONDS.sleep(3);
 		} catch (InterruptedException e) {
@@ -47,9 +79,9 @@ public class LoginTests {
 			e.printStackTrace();
 		}
 		
-		assert(DriverAbstraction.driver.getCurrentUrl().equals("https://assignforce-client.cfapps.io/login"));
+		assert(driver.getCurrentUrl().equals("https://assignforce-client.cfapps.io/login"));
 		
-		DriverAbstraction.driver.quit();
+		driver.close();
 	}
 	
 }

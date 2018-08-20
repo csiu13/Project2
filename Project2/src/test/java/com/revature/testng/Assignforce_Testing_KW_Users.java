@@ -5,19 +5,13 @@ import java.io.File;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
-import com.revature.dao.LoginDaoImpl;
 import com.revature.dao.BatchDaoImpl;
+import com.revature.dao.LoginDaoImpl;
 import com.revature.model.LoginAnnotation;
 import com.revature.pagefactory.BatchPage;
 import com.revature.pagefactory.LoginPage;
@@ -32,7 +26,7 @@ public class Assignforce_Testing_KW_Users {
 	public static LoginDaoImpl login = new LoginDaoImpl();
 
 	
-	@BeforeMethod (groups = {"userTests"})
+	@BeforeMethod 
 	public static void launchApplicationAsUser() {
 		File chrome = new File("src/test/resources/chromedriver.exe");
 		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
@@ -49,7 +43,7 @@ public class Assignforce_Testing_KW_Users {
 		page.login.click();
 	}
 	
-	@AfterMethod (groups = {"createBatch", "testFunctionality"})
+	@AfterMethod 
 	public void logoutAndCloseDriver() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.logout));
@@ -63,6 +57,8 @@ public class Assignforce_Testing_KW_Users {
 		
 		wait.until(ExpectedConditions.elementToBeClickable(tab.navigate));
 
+		tab.navigate.click();
+		tab.navigate.click();
 		tab.navigate.click();
 		tab.navigate.click();
 		
