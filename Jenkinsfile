@@ -21,7 +21,7 @@ pipeline {
                 }
                 dir('./TestApp') {
                     //sh 'npm install protractor-beautiful-reporter --save-dev'
-                    sh 'webdriver-manager update'
+                    //sh 'webdriver-manager update'
                     sh 'webdriver-manager start --detach'
                     sh 'protractor Test/conf.js'
                     sh 'webdriver-manager shutdown'
