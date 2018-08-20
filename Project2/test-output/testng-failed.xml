@@ -3,20 +3,36 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+      <class name="com.revature.cucumber.TestRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="feature" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.revature.cucumber.TestRunner -->
       <class name="com.revature.testng.Assignforce_Testing_KW">
         <methods>
-          <include name="adminCreateNewBatchAndCancel3"/>
+          <include name="adminIterateThroughLocations"/>
           <include name="launchApplicationAsAdmin"/>
-          <include name="adminCreateNewBatchAndCancel9"/>
+          <include name="adminIterateThroughBuildling"/>
+          <include name="adminIterateThroughBatchCoreUntilMemoryFault"/>
           <include name="logoutAndCloseDriver"/>
-          <include name="adminCreateNewBatchAndCancel8"/>
-          <include name="adminCreateNewBatchAndCancel5"/>
-          <include name="adminCreateNewBatchAndSubmit"/>
-          <include name="adminCreateNewBatchAndCancel7"/>
-          <include name="adminCreateNewBatchAndCancel4"/>
-          <include name="adminCreateNewBatchAndCancel6"/>
+          <include name="adminIterateThroughBatchCoreList"/>
+          <include name="adminIterateThroughCotrainers"/>
+          <include name="adminIterateThroughSkillsList"/>
+          <include name="adminEditMultipleBatch"/>
+          <include name="adminEditSingleBatch"/>
+          <include name="adminIterateThroughRoom"/>
+          <include name="adminIterateThroughTrainers"/>
         </methods>
       </class> <!-- com.revature.testng.Assignforce_Testing_KW -->
+      <class name="com.revature.testng.Assignforce_Testing_KW_Users">
+        <methods>
+          <include name="userProfile"/>
+          <include name="logoutAndCloseDriver"/>
+          <include name="launchApplicationAsUser"/>
+        </methods>
+      </class> <!-- com.revature.testng.Assignforce_Testing_KW_Users -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

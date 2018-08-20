@@ -8,7 +8,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
@@ -19,6 +22,7 @@ import com.revature.model.BatchAnnotation;
 import com.revature.model.LoginAnnotation;
 import com.revature.pagefactory.BatchPage;
 import com.revature.pagefactory.LoginPage;
+import com.revature.pagefactory.SettingsPage;
 
 public class Assignforce_Testing_KW {
 
@@ -28,7 +32,7 @@ public class Assignforce_Testing_KW {
 	public static BatchDaoImpl batch = new BatchDaoImpl();
 	public static LoginDaoImpl login = new LoginDaoImpl();
 
-	@BeforeTest
+	@BeforeMethod (groups = {"createBatch", "testFunctionality"})
 	public static void launchApplicationAsAdmin() {
 		File chrome = new File("src/test/resources/chromedriver.exe");
 		System.setProperty("webdriver.chrome.driver", chrome.getAbsolutePath());
@@ -46,12 +50,15 @@ public class Assignforce_Testing_KW {
 		page.pwd.sendKeys(admin.getPassword());
 		page.login.click();
 	}
+	
 
-	@AfterTest
+	@AfterMethod (groups = {"createBatch", "testFunctionality"})
 	public void logoutAndCloseDriver() {
+		BatchPage tab = new BatchPage(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(tab.logout));
 		driver.close();
 	}
-
+	
 	@Test
 	@Ignore
 	public void testAdminLogin() {
@@ -86,7 +93,7 @@ public class Assignforce_Testing_KW {
 		driver.close();
 	}
 
-	@Test
+	@Test (groups = {"createBatch"})
 	public void adminCreateNewBatchAndCancel() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -149,7 +156,7 @@ public class Assignforce_Testing_KW {
 		tab.cancelBatch.click();
 	}
 
-	@Test
+	@Test (groups = {"createBatch"})
 	public void adminCreateNewBatchAndCancel2() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -206,7 +213,7 @@ public class Assignforce_Testing_KW {
 		tab.cancelBatch.click();
 	}
 
-	@Test
+	@Test (groups = {"createBatch"})
 	public void adminCreateNewBatchAndCancel3() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -263,7 +270,7 @@ public class Assignforce_Testing_KW {
 		tab.cancelBatch.click();
 	}
 
-	@Test
+	@Test (groups = {"createBatch"})
 	public void adminCreateNewBatchAndCancel4() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -320,7 +327,7 @@ public class Assignforce_Testing_KW {
 		tab.cancelBatch.click();
 	}
 
-	@Test
+	@Test (groups = {"createBatch"})
 	public void adminCreateNewBatchAndCancel5() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -377,7 +384,7 @@ public class Assignforce_Testing_KW {
 		tab.cancelBatch.click();
 	}
 
-	@Test
+	@Test (groups = {"createBatch"})
 	public void adminCreateNewBatchAndCancel6() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -434,7 +441,7 @@ public class Assignforce_Testing_KW {
 		tab.cancelBatch.click();
 	}
 
-	@Test
+	@Test (groups = {"createBatch"})
 	public void adminCreateNewBatchAndCancel7() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -491,7 +498,7 @@ public class Assignforce_Testing_KW {
 		tab.cancelBatch.click();
 	}
 
-	@Test
+	@Test (groups = {"createBatch"})
 	public void adminCreateNewBatchAndCancel8() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -548,7 +555,7 @@ public class Assignforce_Testing_KW {
 		tab.cancelBatch.click();
 	}
 
-	@Test
+	@Test (groups = {"createBatch"})
 	public void adminCreateNewBatchAndCancel9() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -605,8 +612,8 @@ public class Assignforce_Testing_KW {
 		tab.cancelBatch.click();
 	}
 
-	@Test
-	public void adminCreateNewBatchAndCancel0() {
+	@Test (groups = {"createBatch"})
+	public void adminCreateNewBatchAndCancel10() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -662,7 +669,7 @@ public class Assignforce_Testing_KW {
 		tab.cancelBatch.click();
 	}
 
-	@Test
+	@Test (groups = {"createBatch"})
 	public void adminCreateNewBatchAndSubmit() {
 		// click on batch tab and input data using hibernate
 		BatchPage tab = new BatchPage(driver);
@@ -719,7 +726,7 @@ public class Assignforce_Testing_KW {
 		tab.submitBatch.click();
 	}
 
-	@Test
+	@Test (groups = {"testFunctionality"})
 	public void adminIterateThroughBatchCoreList() {
 		// click on batch tab spam clicks
 		BatchPage tab = new BatchPage(driver);
@@ -809,7 +816,7 @@ public class Assignforce_Testing_KW {
 		tab.coreDropdownDfsfds.click();
 	}
 
-	@Test
+	@Test (groups = {"testFunctionality"})
 	public void adminIterateThroughSkillsList() {
 		// click on batch tab spam clicks
 		BatchPage tab = new BatchPage(driver);
@@ -826,80 +833,12 @@ public class Assignforce_Testing_KW {
 		// click all options under skills
 		tab.skillsDropdown.click();
 		tab.skillsDropdownCorejava.click();
-		tab.skillsDropdownJunit.click();
-		tab.skillsDropdownSelenium.click();
-		tab.skillsDropdownSpring.click();
-		tab.skillsDropdownXYZ.click();
-		tab.skillsDropdownSalesforce.click();
-		tab.skillsDropdownCoresdet.click();
-		tab.skillsDropdownServlets.click();
-		tab.skillsDropdownJSP.click();
-		tab.skillsDropdownCpp.click();
-		tab.skillsDropdownOracle.click();
-		tab.skillsDropdownJdbc.click();
-		tab.skillsDropdownFreemarker.click();
-		tab.skillsDropdownCss.click();
-		tab.skillsDropdownjQuery.click();
-		tab.skillsDropdownHibernate.click();
-		tab.skillsDropdownRest.click();
-		tab.skillsDropdownSoap.click();
-		tab.skillsDropdownAspmvc.click();
-		tab.skillsDropdownAspapi.click();
-		tab.skillsDropdownCsharp.click();
-		tab.skillsDropdownAdonet.click();
-		tab.skillsDropdownMstest.click();
-		tab.skillsDropdownTsql.click();
-		tab.skillsDropdownEntity.click();
-		tab.skillsDropdownXunit.click();
-		tab.skillsDropdownNlog.click();
-		tab.skillsDropdownIis.click();
-		tab.skillsDropdownTestng.click();
-		tab.skillsDropdownManual.click();
-		tab.skillsDropdownPython.click();
-		tab.skillsDropdownUft.click();
-		tab.skillsDropdownCucumber.click();
-		tab.skillsDropdownC.click();
-		tab.skillsDropdownCorenet.click();
-		tab.skillsDropdownCorejava.click();
-		tab.skillsDropdownJunit.click();
-		tab.skillsDropdownSelenium.click();
-		tab.skillsDropdownSpring.click();
-		tab.skillsDropdownXYZ.click();
-		tab.skillsDropdownSalesforce.click();
-		tab.skillsDropdownCoresdet.click();
-		tab.skillsDropdownServlets.click();
-		tab.skillsDropdownJSP.click();
-		tab.skillsDropdownCpp.click();
-		tab.skillsDropdownOracle.click();
-		tab.skillsDropdownJdbc.click();
-		tab.skillsDropdownFreemarker.click();
-		tab.skillsDropdownCss.click();
-		tab.skillsDropdownjQuery.click();
-		tab.skillsDropdownHibernate.click();
-		tab.skillsDropdownRest.click();
-		tab.skillsDropdownSoap.click();
-		tab.skillsDropdownAspmvc.click();
-		tab.skillsDropdownAspapi.click();
-		tab.skillsDropdownCsharp.click();
-		tab.skillsDropdownAdonet.click();
-		tab.skillsDropdownMstest.click();
-		tab.skillsDropdownTsql.click();
-		tab.skillsDropdownEntity.click();
-		tab.skillsDropdownXunit.click();
-		tab.skillsDropdownNlog.click();
-		tab.skillsDropdownIis.click();
-		tab.skillsDropdownTestng.click();
-		tab.skillsDropdownManual.click();
-		tab.skillsDropdownPython.click();
-		tab.skillsDropdownUft.click();
-		tab.skillsDropdownCucumber.click();
-		tab.skillsDropdownC.click();
 		tab.skillsDropdownCorenet.click();
 
 	}
 
 	// incomplete, need to assert that trainers dropdown is more than usual
-	@Test
+	@Test (groups = {"testFunctionality"})
 	public void adminIterateThroughBatchCoreUntilMemoryFault() {
 		// click on batch tab spam clicks
 		// CHECK THE TRAINERS TAB! ITS WHERE THE INFORMATION FROM TABBING IS STORED
@@ -919,7 +858,7 @@ public class Assignforce_Testing_KW {
 
 	}
 
-	@Test
+	@Test (groups = {"testFunctionality"})
 	public void adminIterateThroughTrainers() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -933,26 +872,10 @@ public class Assignforce_Testing_KW {
 		tab.trainerDropdown.click();
 		tab.trainer1.click();
 		tab.trainerDropdown.click();
-		tab.trainer2.click();
-		tab.trainerDropdown.click();
-		tab.trainer3.click();
-		tab.trainerDropdown.click();
-		tab.trainer4.click();
-		tab.trainerDropdown.click();
-		tab.trainer5.click();
-		tab.trainerDropdown.click();
-		tab.trainer6.click();
-		tab.trainerDropdown.click();
-		tab.trainer7.click();
-		tab.trainerDropdown.click();
-		tab.trainer8.click();
-		tab.trainerDropdown.click();
-		tab.trainer9.click();
-		tab.trainerDropdown.click();
 		tab.trainer10.click();
 	}
 
-	@Test
+	@Test (groups = {"testFunctionality"})
 	public void adminIterateThroughCotrainers() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -969,27 +892,9 @@ public class Assignforce_Testing_KW {
 		tab.august.click();
 		tab.cotrainerDropdown.click();
 		tab.fred.click();
-		tab.cotrainerDropdown.click();
-		tab.joe.click();
-		tab.cotrainerDropdown.click();
-		tab.brian.click();
-		tab.cotrainerDropdown.click();
-		tab.taylor.click();
-		tab.cotrainerDropdown.click();
-		tab.patrick.click();
-		tab.cotrainerDropdown.click();
-		tab.yuvi.click();
-		tab.cotrainerDropdown.click();
-		tab.steven.click();
-		tab.cotrainerDropdown.click();
-		tab.ryan.click();
-		tab.cotrainerDropdown.click();
-		tab.richard.click();
-		tab.cotrainerDropdown.click();
-		tab.nicholas.click();
 	}
 
-	@Test
+	@Test (groups = {"testFunctionality"})
 	public void adminIterateThroughLocations() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -1010,7 +915,7 @@ public class Assignforce_Testing_KW {
 		tab.wv.click();
 	}
 
-	@Test
+	@Test (groups = {"testFunctionality"})
 	public void adminIterateThroughBuildling() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -1033,7 +938,7 @@ public class Assignforce_Testing_KW {
 		tab.lastBuilding.click();
 	}
 
-	@Test
+	@Test (groups = {"testFunctionality"})
 	public void adminIterateThroughRoom() {
 		BatchPage tab = new BatchPage(driver);
 		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
@@ -1055,4 +960,37 @@ public class Assignforce_Testing_KW {
 		tab.roomDropdown.click();
 		tab.lastRoom.click();
 	}
+
+	//test multiple and delete under batches can't delete
+	@Test (groups = {"testFunctionality"})
+	public void adminEditSingleBatch() {
+		BatchPage tab = new BatchPage(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
+		tab.batchTab.click();
+		tab.editBatch1.click();
+		tab.editBatch2.click();
+		tab.editBatch3.click();
+		tab.editBatch4.click();
+		tab.editBatch5.click();
+
+	}
+	
+	//test checkbox and edit (DOEST WORK)
+	@Test (groups = {"testFunctionality"})
+	public void adminEditMultipleBatch () {
+		BatchPage tab = new BatchPage(driver);
+		wait.until(ExpectedConditions.elementToBeClickable(tab.batchTab));
+		tab.batchTab.click();
+		tab.checkbox1.click();
+		tab.checkbox2.click();
+		tab.checkbox3.click();
+		tab.checkbox4.click();
+		tab.checkbox5.click();
+		tab.editBatch1.click();
+		tab.editBatch2.click();
+		tab.editBatch3.click();
+		tab.editBatch4.click();
+		tab.editBatch5.click();
+	}
+
 }
