@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="com.revature.testng.Assignforce_Testing_KW">
+        <methods>
+          <include name="adminCreateNewBatchAndCancel3"/>
+          <include name="adminCreateNewBatchAndCancel2"/>
+          <include name="launchApplicationAsAdmin"/>
+          <include name="testAdminLogin"/>
+          <include name="logoutAndCloseDriver"/>
+          <include name="testUserLogin"/>
+          <include name="adminCreateNewBatchAndCancel"/>
+          <include name="adminIterateThroughRoom"/>
+        </methods>
+      </class> <!-- com.revature.testng.Assignforce_Testing_KW -->
+      <class name="com.revature.cucumber.TestRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="feature"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.revature.cucumber.TestRunner -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

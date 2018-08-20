@@ -27,7 +27,7 @@ export class ConfigComponent {
   runTests() {
     return this.configService.getTestResult('?test=true')
       .subscribe(
-        (data: string) => {this.body = data; console.log(data);},
+        (data: string) => {this.body = data; console.log(data); },
         error => this.error = error
       );
   }
@@ -35,7 +35,7 @@ export class ConfigComponent {
   showConfig() {
     return this.configService.getConfig()
       .subscribe(
-        (data: string) => {this.message = data; console.log(data);}, // success path
+        (data: string) => {this.message = data; console.log(data); }, // success path
         error => this.error = error // error path
       );
   }

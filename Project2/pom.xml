@@ -154,6 +154,7 @@
 					<version>2.22.0</version>
 					<configuration>
 						<includes>**/Assignforce*.java</includes>
+						<includes>**/TestRunner.java</includes>
 					</configuration>
 				</plugin>
 				<plugin>

@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<div style=\"text-align:center\">\r\n  <h1 #newinfo>\r\n    AJAX CALL SAMPLE\r\n  </h1>\r\n  <img width=\"300\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\r\n</div>\r\n<h2>Here are some links to help you start: </h2>\r\n<div>\r\n  <app-config *ngIf=\"showConfig\"></app-config>\r\n</div>\r\n\r\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<div style=\"text-align:center; font-family: Arial\">\r\n  <h1 #newinfo>\r\n    Team Chuckle Bros Test Suite\r\n  </h1>\r\n</div>\r\n<div>\r\n  <app-config *ngIf=\"showConfig\"></app-config>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -154,7 +154,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h3>Get configuration from JSON file</h3>\r\n<div>\r\n  <!-- <button (click)=\"clear(); showConfig()\">Get</button>\r\n  <button (click)=\"clear(); showConfigResponse()\">GetResponse</button>\r\n  <button (click)=\"clear()\">clear</button>\r\n  <button (click)=\"clear(); makeError()\">error</button> -->\r\n  <button><a href=\"seleniumReports.html\">Run Selenium Tests</a></button>\r\n  <button><a href=\"protractorReports.html\">Run Protractor Tests</a></button>\r\n  <span *ngIf=\"message\">\r\n    <p>Heroes API URL is \"{{message}}\"</p>\r\n    <div *ngIf=\"headers\">\r\n      Response headers:\r\n      <ul>\r\n        <li *ngFor=\"let header of headers\">{{header}}</li>\r\n      </ul>\r\n    </div>\r\n  </span>\r\n</div>\r\n<p *ngIf=\"error\" class=\"error\">{{error | json}}</p>\r\n<div id=\"mainContainer\">{{body}}</div>\r\n\r\n\r\n<!-- \r\nCopyright 2017-2018 Google Inc. All Rights Reserved.\r\nUse of this source code is governed by an MIT-style license that\r\ncan be found in the LICENSE file at http://angular.io/license\r\n-->"
+module.exports = "<style>\r\n  button {\r\n    background-color: rgb(199, 238, 23);\r\n    border: round;\r\n    color: white;\r\n    padding: 15px 32px;\r\n    text-align: center;\r\n    text-decoration: none;\r\n    display: inline-block;\r\n    font-size: 20px;\r\n  }\r\n</style>\r\n<div style=\"text-align: center\">\r\n  <!-- <button (click)=\"clear(); showConfig()\">Get</button>\r\n  <button (click)=\"clear(); showConfigResponse()\">GetResponse</button>\r\n  <button (click)=\"clear()\">clear</button>\r\n  <button (click)=\"clear(); makeError()\">error</button> -->\r\n  <button><a href=\"seleniumReports.html\">Run Selenium Tests</a></button>\r\n  <!--<button><a href=\"../TestResults/tmp/protractorReports.html\">Run Protractor Tests</a></button>-->\r\n  <span *ngIf=\"message\">\r\n    <p>Heroes API URL is \"{{message}}\"</p>\r\n    <div *ngIf=\"headers\">\r\n      Response headers:\r\n      <ul>\r\n        <li *ngFor=\"let header of headers\">{{header}}</li>\r\n      </ul>\r\n    </div>\r\n  </span>\r\n</div>\r\n<div style=\"padding: 10px\"></div>\r\n<div style=\"text-align: center\">\r\n  <!-- <button (click)=\"clear(); showConfig()\">Get</button>\r\n  <button (click)=\"clear(); showConfigResponse()\">GetResponse</button>\r\n  <button (click)=\"clear()\">clear</button>\r\n  <button (click)=\"clear(); makeError()\">error</button> -->\r\n  <!--<button><a href=\"../TestResults/seleniumReports.html\">Run Selenium Tests</a></button>-->\r\n  <button><a href=\"protractorReports.html\">Run Protractor Tests</a></button>\r\n  <span *ngIf=\"message\">\r\n    <p>Heroes API URL is \"{{message}}\"</p>\r\n    <div *ngIf=\"headers\">\r\n      Response headers:\r\n      <ul>\r\n        <li *ngFor=\"let header of headers\">{{header}}</li>\r\n      </ul>\r\n    </div>\r\n  </span>\r\n</div>\r\n<p *ngIf=\"error\" class=\"error\">{{error | json}}</p>\r\n<div id=\"mainContainer\">{{body}}</div>\r\n\r\n\r\n<!--\r\nCopyright 2017-2018 Google Inc. All Rights Reserved.\r\nUse of this source code is governed by an MIT-style license that\r\ncan be found in the LICENSE file at http://angular.io/license\r\n-->\r\n"
 
 /***/ }),
 
@@ -244,7 +244,7 @@ var ConfigComponent = /** @class */ (function () {
 Copyright 2017-2018 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/ 
+*/
 
 
 /***/ }),
@@ -310,7 +310,6 @@ var ConfigService = /** @class */ (function () {
         // return an observable with a user-facing error message
         return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["throwError"])('Something bad happened; please try again later.');
     };
-    ;
     ConfigService.prototype.makeIntentionalError = function () {
         return this.http.get('not/a/real/url')
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError));
@@ -326,7 +325,7 @@ var ConfigService = /** @class */ (function () {
 Copyright 2017-2018 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
-*/ 
+*/
 
 
 /***/ }),
@@ -391,7 +390,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\my_git_ripos\Project2\TestApp\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\gitHub-repo\Project2\TestApp\src\main.ts */"./src/main.ts");
 
 
 /***/ })
