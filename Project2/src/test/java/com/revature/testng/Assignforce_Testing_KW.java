@@ -690,7 +690,7 @@ public class Assignforce_Testing_KW {
 			tab.lastRoom.click();
 		}
 
-		tab.submitBatch.click();
+		tab.cancelBatch.click();
 	}
 
 	@Test
