@@ -153,12 +153,8 @@ public class BatchPage {
 	// Calendar options
 	@FindBy(xpath = "//*[@id=\"cdk-accordion-child-3\"]/div/form/div[2]/mat-form-field[1]/div/div[1]/div[1]/mat-datepicker-toggle/button")
 	public WebElement calendar;
-	@FindBy(css = "#mat-datepicker-2 > div.mat-calendar-content > mat-month-view > table > tbody > tr:nth-child(4) > td:nth-child(2)")
+	@FindBy(xpath = "//*[@id=\"mat-datepicker-2\"]/div[2]/mat-month-view/table/tbody/tr[5]/td[3]")
 	public WebElement today;
-	@FindBy(css = "#mat-datepicker-2 > div.mat-calendar-content > mat-month-view > table > tbody > tr:nth-child(4) > td:nth-child(3)")
-	public WebElement tomorrow;
-	@FindBy(css = "#mat-datepicker-2 > div.mat-calendar-content > mat-month-view > table > tbody > tr:nth-child(4) > td:nth-child(4)")
-	public WebElement death;
 
 	// Co-Trainer options
 	@FindBy(css = "#mat-select-6")

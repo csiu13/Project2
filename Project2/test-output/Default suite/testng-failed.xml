@@ -3,22 +3,6 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.revature.testng.OverviewTests">
-        <methods>
-          <include name="testEndUp"/>
-          <include name="testEndDown"/>
-          <include name="testStartUp"/>
-          <include name="testCurriculumUp"/>
-          <include name="testProgressUp"/>
-          <include name="testTrainerUp"/>
-          <include name="testStartDown"/>
-          <include name="beforeTest"/>
-          <include name="testTrainerDown"/>
-          <include name="afterTest"/>
-          <include name="testLocationDown"/>
-          <include name="testNameUp"/>
-        </methods>
-      </class> <!-- com.revature.testng.OverviewTests -->
       <class name="com.revature.testng.TabBarTests">
         <methods>
           <include name="afterTest"/>
