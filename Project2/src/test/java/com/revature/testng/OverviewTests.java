@@ -236,10 +236,12 @@ public class OverviewTests {
 	  @Test(dependsOnMethods = {"testProgressUp"})
 	  public void testProgressDown() {
 		  driver.findElement(By.cssSelector("#cdk-accordion-child-0 > div > div > mat-table > mat-header-row > mat-header-cell.mat-header-cell.ng-tns-c13-11.cdk-column-progress.mat-column-progress.ng-star-inserted > div > button")).click();
-		  driver.findElement(By.cssSelector("#cdk-accordion-child-0 > div > div > mat-table > mat-header-row > mat-header-cell.mat-header-cell.ng-tns-c13-11.cdk-column-progress.mat-column-progress.ng-star-inserted > div > button")).click();
+		  //driver.findElement(By.cssSelector("#cdk-accordion-child-0 > div > div > mat-table > mat-header-row > mat-header-cell.mat-header-cell.ng-tns-c13-11.cdk-column-progress.mat-column-progress.ng-star-inserted > div > button")).click();
 		  String temp = driver.findElement(By.cssSelector("#cdk-accordion-child-0 > div > div > mat-table > mat-row:nth-child(2) > mat-cell.mat-cell.cdk-column-endDate.mat-column-endDate.ng-star-inserted")).getText();
+		  System.out.println(temp);
 		  assert(temp.equals("Jun 16, 2017"));
-		  temp = driver.findElement(By.cssSelector("#cdk-accordion-child-0 > div > div > mat-table > mat-row:nth-child(121) > mat-cell.mat-cell.cdk-column-endDate.mat-column-endDate.ng-star-inserted")).getText();
-		  assert(temp.equals("Nov 1, 2018"));
+		  temp = driver.findElement(By.cssSelector("#cdk-accordion-child-0 > div > div > mat-table > mat-row:nth-child(122) > mat-cell.mat-cell.cdk-column-endDate.mat-column-endDate.ng-star-inserted")).getText();
+		  System.out.println(temp);
+		  assert(temp.equals("Nov 2, 2018"));
 	  }
 }
