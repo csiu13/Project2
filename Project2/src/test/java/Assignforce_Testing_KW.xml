@@ -15,9 +15,6 @@
 			<class name="com.revature.testng.Assignforce_Testing_KW">
 			</class>
 			<class name="com.revature.testng.Assignforce_Testing_KW_Users">
-			<!-- <methods> -->
-			<!-- <include name="userSettings" /> -->
-			<!-- </methods> -->
 			</class>
 			<class name="com.revature.testng.LoginTests" />
 			<class name="com.revature.testng.TabBarTests" />
@@ -25,5 +22,5 @@
 			<class name="com.revature.cucumber.TestRunner" />
 			<class name="com.revature.cucumber.TestRunnerBatch" />
 		</classes>
-	</test> <!-- Default test -->
-</suite> <!-- Default suite -->
+	</test>
+</suite>
