@@ -37,9 +37,8 @@ public class Assignforce_Testing_KW_Users {
 		wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.elementToBeClickable(page.login));
 		LoginAnnotation user = new LoginAnnotation();
-		user = login.findLoginById(2);
-		page.email.sendKeys(user.getUsername());
-		page.pwd.sendKeys(user.getPassword());
+		page.email.sendKeys("test.trainer@revature.com");
+		page.pwd.sendKeys("p@$$w0rd");
 		page.login.click();
 	}
 	

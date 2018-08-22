@@ -35,10 +35,8 @@ public class Assignforce_Testing_KW {
 		driver.get("https://assignforce-client.cfapps.io/login");
 		wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.elementToBeClickable(page.login));
-		LoginAnnotation admin = new LoginAnnotation();
-		admin = login.findLoginById(1);
-		page.email.sendKeys(admin.getUsername());
-		page.pwd.sendKeys(admin.getPassword());
+		page.email.sendKeys("svp@revature.com");
+		page.pwd.sendKeys("p@$$w0rd");
 		page.login.click();
 	}
 
@@ -58,14 +56,7 @@ public class Assignforce_Testing_KW {
 		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdown));
 		tab.coreDropdown.click();
 
-		BatchAnnotation newBatch = new BatchAnnotation();
-		newBatch = batch.findBatchById(1);
-
-		if (newBatch.getCore().equals("Java") == true) {
-			tab.coreDropdownJava.click();
-		} else {
-			tab.coreDropdownNet.click();
-		}
+		tab.coreDropdownJava.click();
 
 		wait.until(ExpectedConditions.elementToBeClickable(tab.calendar));
 		tab.calendar.click();
@@ -73,11 +64,7 @@ public class Assignforce_Testing_KW {
 
 		wait.until(ExpectedConditions.elementToBeClickable(tab.trainerDropdown));
 		tab.trainerDropdown.click();
-		if (newBatch.getTrainer().equals("August")) {
-			tab.trainer1.click();
-		} else {
-			tab.trainer2.click();
-		}
+		tab.trainer1.click();
 
 		wait.until(ExpectedConditions.elementToBeClickable(tab.cotrainerDropdown));
 		tab.cotrainerDropdown.click();
@@ -85,29 +72,15 @@ public class Assignforce_Testing_KW {
 
 		wait.until(ExpectedConditions.elementToBeClickable(tab.locationDropdown));
 		tab.locationDropdown.click();
-		if (newBatch.getLocation().equals("Revature HQ")) {
-			tab.revature.click();
-		} else if (newBatch.getLocation().equals("Capital One")) {
-			tab.wv.click();
-		} else {
-			tab.revature.click();
-		}
+		tab.revature.click();
 
 		wait.until(ExpectedConditions.elementToBeClickable(tab.buildingDropdown));
 		tab.buildingDropdown.click();
-		if (newBatch.getBuilding().equals("11730 Plaza American Drive (HQ)")) {
-			tab.firstBuilding.click();
-		} else {
-			tab.lastBuilding.click();
-		}
+		tab.firstBuilding.click();
 
 		wait.until(ExpectedConditions.elementToBeClickable(tab.roomDropdown));
 		tab.roomDropdown.click();
-		if (newBatch.getRoom() == 208) {
-			tab.firstRoom.click();
-		} else {
-			tab.lastRoom.click();
-		}
+		tab.firstRoom.click();
 
 		tab.cancelBatch.click();
 	}
@@ -861,24 +834,24 @@ public class Assignforce_Testing_KW {
 		tab.coreDropdown.click();
 		wait.until(ExpectedConditions.elementToBeClickable(tab.coreDropdownJava));
 		tab.coreDropdownJava.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.calendar));
 		tab.calendar.click();
 		tab.today.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.trainerDropdown));
 		tab.trainerDropdown.click();
 		tab.trainer1.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.cotrainerDropdown));
 		tab.cotrainerDropdown.click();
 		tab.august.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.cotrainerDropdown));
 		tab.cotrainerDropdown.click();
 		tab.fred.click();
 	}
-	
+
 	@Test
 	public void adminIterateThroughCotrainersAugust() {
 		BatchPage tab = new BatchPage(driver);
@@ -891,16 +864,16 @@ public class Assignforce_Testing_KW {
 		wait.until(ExpectedConditions.elementToBeClickable(tab.calendar));
 		tab.calendar.click();
 		tab.today.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.trainerDropdown));
 		tab.trainerDropdown.click();
 		tab.trainer1.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.cotrainerDropdown));
 		tab.cotrainerDropdown.click();
 		tab.august.click();
 	}
-	
+
 	@Test
 	public void adminIterateThroughCotrainersFred() {
 		BatchPage tab = new BatchPage(driver);
@@ -913,16 +886,15 @@ public class Assignforce_Testing_KW {
 		wait.until(ExpectedConditions.elementToBeClickable(tab.calendar));
 		tab.calendar.click();
 		tab.today.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.trainerDropdown));
 		tab.trainerDropdown.click();
 		tab.trainer1.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.cotrainerDropdown));
 		tab.cotrainerDropdown.click();
 		tab.fred.click();
 	}
-	
 
 	@Test
 	public void adminIterateThroughLocations() {
@@ -936,20 +908,20 @@ public class Assignforce_Testing_KW {
 		wait.until(ExpectedConditions.elementToBeClickable(tab.calendar));
 		tab.calendar.click();
 		tab.today.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.trainerDropdown));
 		tab.trainerDropdown.click();
 		tab.trainer1.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.cotrainerDropdown));
 		tab.cotrainerDropdown.click();
 		tab.august.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.locationDropdown));
 		tab.locationDropdown.click();
 		tab.wv.click();
 	}
-	
+
 	@Test
 	public void adminIterateThroughLocationsWv() {
 		BatchPage tab = new BatchPage(driver);
@@ -962,20 +934,19 @@ public class Assignforce_Testing_KW {
 		wait.until(ExpectedConditions.elementToBeClickable(tab.calendar));
 		tab.calendar.click();
 		tab.today.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.trainerDropdown));
 		tab.trainerDropdown.click();
 		tab.trainer1.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.cotrainerDropdown));
 		tab.cotrainerDropdown.click();
 		tab.august.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.locationDropdown));
 		tab.locationDropdown.click();
 		tab.wv.click();
 	}
-	
 
 	@Test
 	public void adminIterateThroughBuildling() {
@@ -989,26 +960,26 @@ public class Assignforce_Testing_KW {
 		wait.until(ExpectedConditions.elementToBeClickable(tab.calendar));
 		tab.calendar.click();
 		tab.today.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.trainerDropdown));
 		tab.trainerDropdown.click();
 		tab.trainer1.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.cotrainerDropdown));
 		tab.cotrainerDropdown.click();
 		tab.august.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.locationDropdown));
 		tab.locationDropdown.click();
 		tab.wv.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.buildingDropdown));
 		tab.buildingDropdown.click();
 		tab.firstBuilding.click();
 		tab.buildingDropdown.click();
 		tab.lastBuilding.click();
 	}
-	
+
 	@Test
 	public void adminIterateThroughBuildlingLast() {
 		BatchPage tab = new BatchPage(driver);
@@ -1021,24 +992,23 @@ public class Assignforce_Testing_KW {
 		wait.until(ExpectedConditions.elementToBeClickable(tab.calendar));
 		tab.calendar.click();
 		tab.today.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.trainerDropdown));
 		tab.trainerDropdown.click();
 		tab.trainer1.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.cotrainerDropdown));
 		tab.cotrainerDropdown.click();
 		tab.august.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.locationDropdown));
 		tab.locationDropdown.click();
 		tab.wv.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.buildingDropdown));
 		tab.buildingDropdown.click();
 		tab.firstBuilding.click();
 	}
-	
 
 	@Test
 	public void adminIterateThroughRoom() {
@@ -1065,12 +1035,12 @@ public class Assignforce_Testing_KW {
 		wait.until(ExpectedConditions.elementToBeClickable(tab.locationDropdown));
 		tab.locationDropdown.click();
 		tab.revature.click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(tab.roomDropdown));
 		tab.roomDropdown.click();
 		tab.firstRoom.click();
 	}
-	
+
 	@Test
 	public void adminIterateThroughRoomLast() {
 		BatchPage tab = new BatchPage(driver);
@@ -1097,7 +1067,6 @@ public class Assignforce_Testing_KW {
 		tab.roomDropdown.click();
 		tab.lastRoom.click();
 	}
-	
 
 	// test multiple and delete under batches can't delete
 	@Test
