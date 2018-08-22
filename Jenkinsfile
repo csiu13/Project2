@@ -17,7 +17,7 @@ pipeline {
         stage('Test') {
             steps {
                 dir('./Project2') {
-                    sh 'mvn test -fn'
+                    sh 'mvn test -fae'
                 }
                 dir('./TestApp') {
                     //sh 'npm install protractor-beautiful-reporter --save-dev'
